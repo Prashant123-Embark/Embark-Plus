@@ -33,7 +33,7 @@ Inside the claude.ai preview, the form saves enquiries to the page's own data st
 - Images are WebP; all modern browsers support them.
 
 ## Overview video
-Put the final video file (for example `embark-overview.mp4`) in this folder, then in `index.html` set `const VIDEO_SRC='embark-overview.mp4';`. Until then, pressing play shows "Video coming soon".
+The overview video lives at `video/embark-overview.mp4` (59.5 seconds, 1080p, compressed for the web) with its poster at `img/video-poster.webp`. To swap it, replace that file with a new MP4 of the same name.
 
 ## Sharing previews
 - `og:image` points to `img/og-image.png`. It is set to https://embark-plus.netlify.app/img/og-image.png. If you move to your own domain, update it to that address, because LinkedIn, WhatsApp and X need an absolute URL.

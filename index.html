@@ -147,7 +147,7 @@ h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.
 .reveal .desc{margin-top:26px!important}
 .player{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:var(--ink);box-shadow:0 40px 100px rgba(40,26,120,.22),0 0 0 1px rgba(14,12,22,.06)}
 .player .poster{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:var(--ink);display:block;text-align:left;color:#fff}
-.player .poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:0 0;opacity:.42;filter:saturate(.85);transition:opacity .4s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.player .poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;opacity:.8;transition:opacity .4s,transform .8s cubic-bezier(.2,.8,.2,1)}
 .player .poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,8,14,.1) 30%,rgba(9,8,14,.85) 100%)}
 .player .poster:hover img{opacity:.7;transform:scale(1.02)}
 .player .pb{position:absolute;left:50%;top:50%;z-index:2;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:var(--neon);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(225,255,4,.18);transition:transform .25s}
@@ -745,10 +745,10 @@ h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.
         <p class="desc">Embark+ makes content creation more accessible and affordable, helping businesses produce marketing &amp; social media creatives at a fraction of traditional production costs.</p>
       </div>
       <div class="player" id="player">
-        <button type="button" class="poster" id="playBtn" aria-label="Play the Embark+ overview video, 45 seconds">
-          <img src="img/screen-design.webp" alt="" width="2200" height="1279" loading="lazy">
+        <button type="button" class="poster" id="playBtn" aria-label="Play the Embark+ overview video, 1 minute">
+          <img src="img/video-poster.webp" alt="" width="1600" height="900" loading="lazy">
           <span class="pb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span>
-          <span class="meta"><span class="mt"><b>Embark+ in 45 seconds</b><small>Overview</small></span><span class="d">0:45</span></span>
+          <span class="meta"><span class="mt"><b>Embark+ in 60 seconds</b><small>Overview</small></span><span class="d">0:59</span></span>
         </button>
       </div>
     </div>
@@ -1102,11 +1102,11 @@ h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.
   new IntersectionObserver(([e])=>{belt.style.animationPlayState=e.isIntersecting?'':'paused'}).observe(mq);
   /* ---------- 03b overview video ----------
      Put the final MP4 next to index.html (or a full URL) in VIDEO_SRC. Until then the player says the video is on its way. */
-  const VIDEO_SRC='';
+  const VIDEO_SRC='video/embark-overview.mp4';
   const player=document.getElementById('player'),playBtn=document.getElementById('playBtn');
   playBtn.addEventListener('click',()=>{
     if(!VIDEO_SRC){if(!player.querySelector('.soon')){const n=document.createElement('span');n.className='soon';n.setAttribute('role','status');n.textContent='Video coming soon';player.appendChild(n);setTimeout(()=>n.remove(),2600)}return}
-    const v=document.createElement('video');v.src=VIDEO_SRC;v.controls=true;v.playsInline=true;v.autoplay=true;v.setAttribute('aria-label','Embark+ overview video');
+    const v=document.createElement('video');v.src=VIDEO_SRC;v.poster='img/video-poster.webp';v.controls=true;v.playsInline=true;v.autoplay=true;v.setAttribute('aria-label','Embark+ overview video');
     player.appendChild(v);playBtn.hidden=true;v.focus();v.play().catch(()=>{})});
 
   /* ---------- 04 brand assets: photo + brand = branded set ---------- */
