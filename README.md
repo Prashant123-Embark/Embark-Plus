@@ -45,3 +45,16 @@ The overview video lives at `video/embark-overview.mp4` (59.5 seconds, 1080p, co
 
 ## Fonts
 Sora, Instrument Sans and IBM Plex Mono load from Google Fonts, plus Archivo and Fraunces for the sample creatives.
+
+## Charity landing page (`/charities/`)
+A separate, self-contained page for charity decision-makers lives in `charities/` (its own `index.html`, `img/` and `video/`). On Netlify it is served at `/charities/`, for example https://plus.embark-growth.com/charities/.
+
+- **Settings:** everything left to fill in is in one `CONFIG` block at the bottom of `charities/index.html`:
+  - `VIDEO_SRC`: the 60-second explainer (MP4 path, YouTube or Vimeo link). Until it is set, the video buttons show "Video coming soon".
+  - `HERO_LOOP_SRC`: the silent background loop in the hero, currently `video/hero-loop.mp4`. It can be swapped for a short clip of the final video.
+  - `GTM_ID`: Google Tag Manager ID. All tracking events also go to `window.dataLayer`.
+  - `PRIVACY_URL`: link for "Privacy policy" in the footer.
+- **Demo form:** posts to Netlify Forms as a separate form called `charity-demo` (Netlify dashboard > Forms > charity-demo). Add an email notification there so enquiries reach Prashant@embark.media. To use a CRM instead, set `LEAD_ENDPOINT` in `CONFIG`.
+- **Pricing used on the page:** USD 2,000 one-time setup, USD 1.50 per creative, USD 1,500 a month for platform and service management. The Ramadan calculator compares this with an agency team at about USD 4,900 (AED 18,000) a month for 30 to 40 creatives, adding a team per 40 creatives. The setup fee is excluded from the comparison.
+- **Creatives:** real Embark+ outputs made for a global Islamic charity, with that charity's logos replaced by a "Charity" placeholder. The UAE (Arabic), Indonesia and Germany versions in the market section are illustrative and are labelled as such on the page.
+- **Before launch:** have native speakers check the Arabic, Bahasa Indonesia and German copy, and the illustrative donation values (AED 350, Rp1.5m, EUR 90).
