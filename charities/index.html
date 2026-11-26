@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Embark+ for Charities</title>
+<meta name="description" content="Create fundraising content once. Adapt it for different programmes, donation values, audiences and markets, without starting from scratch every time.">
+<meta name="theme-color" content="#09080E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Embark+ for Charities">
+<meta property="og:description" content="More fundraising content. Less time. Less cost.">
+<meta property="og:image" content="https://plus.embark-growth.com/charities/img/og-image.png">
+<meta property="og:url" content="https://plus.embark-growth.com/charities/">
+<link rel="canonical" href="https://plus.embark-growth.com/charities/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Montserrat:ital,wght@0,600;0,800;0,900;1,800&family=Cairo:wght@600;800;900&display=swap">
+<link rel="preload" as="image" href="img/hero-loop-poster.webp">
+<style>
+/* VOICE   Embark+ product site, charity edition: calm, numbers first, the product doing the talking.
+   IDEA    One appeal, many versions. The calendar fills, the workflow runs as you scroll, the appeal changes market in front of you.
+   PICTURE The 60-second video up top, then a fundraising month filling with versions, the live workflow, and one appeal re-set for six markets.
+   COLOUR  Live Embark+ tokens: stage black #09080E, logo purple #5741D6, paper #F6F5FA, neon #E1FF04 used sparingly.
+   TYPE    Sora display, Instrument Sans text, IBM Plex Mono labels (plus.embark-growth.com). Montserrat and Cairo only inside the creative. */
+:root{
+  --ink:#09080E;--ink-2:#121019;--ink-3:#1C1927;--line-d:rgba(236,232,255,.10);
+  --purple:#5741D6;--purple-hi:#8C7BFF;--lilac:#EEEBFC;--neon:#E1FF04;
+  --paper:#F6F5FA;--white:#fff;--fg-d:#F4F2FB;--mute-d:#9C98AE;--fg-l:#0E0C16;--mute-l:#5E5A70;--line-l:#E2DFEC;
+  --display:'Sora',ui-sans-serif,system-ui,sans-serif;
+  --body:'Instrument Sans',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --nav:68px;
+  --gut-l:max(16px,env(safe-area-inset-left,0px));--gut-r:max(16px,env(safe-area-inset-right,0px));
+  color-scheme:dark;
+}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:calc(var(--nav) + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--ink);color:var(--fg-d);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--neon);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+@media (max-width:600px){.wrap{padding-left:var(--gut-l);padding-right:var(--gut-r)}}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.035em}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sec-h{font-size:clamp(32px,4.2vw,58px);font-weight:800;line-height:1.02;letter-spacing:-.05em}
+.lead{font-family:var(--display);font-weight:600;font-size:clamp(19px,1.8vw,24px);letter-spacing:-.025em;line-height:1.3;margin:0}
+.body{margin:12px 0 0;max-width:56ch}
+.cap{font-size:13px;font-style:italic;margin:22px 0 0}
+
+/* Buttons (live site) */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.01em;text-decoration:none;border-radius:999px;padding:13px 22px;border:1px solid transparent;cursor:pointer;transition:transform .2s ease,background .2s ease,border-color .2s ease;min-height:44px}
+.btn:hover{transform:translateY(-1px)}
+.btn-neon{background:var(--neon);color:var(--ink)}.btn-neon:hover{background:#EEFF5C}
+.btn-ink{background:var(--ink);color:#fff}.btn-ink:hover{background:var(--purple)}
+.link-play{display:inline-flex;align-items:center;gap:10px;background:none;border:0;cursor:pointer;font-family:var(--display);font-weight:600;font-size:15px;padding:10px 4px;min-height:44px;color:var(--fg-d)}
+.link-play i{width:34px;height:34px;border-radius:50%;border:1px solid rgba(244,242,251,.3);display:grid;place-items:center;transition:border-color .2s}
+.link-play:hover i{border-color:var(--neon)}
+.link-play svg{width:12px;height:12px;margin-left:2px}
+
+/* Nav (live site) */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(9,8,14,.94);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line-d)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:var(--nav);gap:24px}
+.nav-logo img{height:22px;width:auto}
+.nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-size:14.5px;color:var(--mute-d);transition:color .2s}
+.nav-links a:hover,.nav-links a[aria-current]{color:var(--fg-d)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav .btn{padding:10px 18px;font-size:14px;min-height:40px}
+.menu-btn{display:none;background:none;border:1px solid var(--line-d);width:44px;height:44px;border-radius:12px;cursor:pointer}
+.menu-btn span{display:block;width:16px;height:1.5px;background:currentColor;margin:4px auto;transition:transform .25s}
+.mobile-menu{display:none}
+@media (max-width:1000px){
+  .nav-links{display:none}.menu-btn{display:block}
+  .mobile-menu{display:block;position:fixed;inset:calc(var(--nav) + env(safe-area-inset-top,0px)) 0 auto;z-index:49;background:var(--ink);border-bottom:1px solid var(--line-d);padding:12px var(--gut-r) 24px var(--gut-l);transform:translateY(-110%);transition:transform .3s ease;visibility:hidden}
+  .mobile-menu.is-open{transform:none;visibility:visible}
+  .mobile-menu a{display:block;font-family:var(--display);font-size:22px;letter-spacing:-.02em;text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line-d)}
+  .mobile-menu .btn{display:flex;margin-top:18px;border:0;font-size:17px;padding:15px}
+  .menu-btn[aria-expanded="true"] span:first-child{transform:translateY(2.75px) rotate(45deg)}
+  .menu-btn[aria-expanded="true"] span:last-child{transform:translateY(-2.75px) rotate(-45deg)}
+}
+@media (max-width:600px){:root{--nav:60px}.nav .btn{padding:8px 14px;font-size:13.5px}.nav-logo img{height:18px}.nav .wrap{gap:10px}.menu-btn{width:40px;height:40px}}
+
+/* ---------- Hero: full-bleed, the creatives moving behind the message ---------- */
+.hero{position:relative;overflow:hidden;min-height:min(calc(100svh - var(--nav)),860px);display:flex;align-items:stretch;background:var(--ink)}
+.h-bg{position:absolute;inset:0;background:var(--ink) url(img/hero-loop-poster.webp) center/cover}
+.h-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease}
+.h-bg video.on{opacity:1}
+.h-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,8,14,.97) 0%,rgba(9,8,14,.9) 34%,rgba(9,8,14,.45) 62%,rgba(9,8,14,.12) 100%),linear-gradient(0deg,rgba(9,8,14,.9),rgba(9,8,14,0) 32%)}
+.hero-in{position:relative;width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:40px;padding-block:72px 56px}
+.h-copy{max-width:600px;align-self:center}
+.h-eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--mute-d);margin:0 0 20px}
+.h-eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--neon)}
+.h-title{font-size:clamp(40px,4.6vw,68px);font-weight:800;line-height:.98;letter-spacing:-.055em}
+.h-title span{display:block}
+.h-title span+span{color:var(--neon)}
+.h-stats{display:flex;gap:40px;margin:30px 0 0;padding:0;list-style:none}
+.h-stats li{display:grid;gap:2px}
+.h-stats b{font-family:var(--display);font-weight:800;font-size:clamp(36px,3.6vw,52px);line-height:1;letter-spacing:-.05em}
+.h-stats b small{font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute-d);margin-right:8px;vertical-align:.9em}
+.h-stats span{font-size:14.5px;color:rgba(244,242,251,.78);max-width:20ch;line-height:1.35}
+.h-body{margin:24px 0 0;color:rgba(244,242,251,.78);max-width:44ch}
+.h-cta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:28px}
+.h-cta .btn{padding:15px 24px;font-size:15.5px}
+.btn-glass{color:var(--fg-d);border-color:rgba(244,242,251,.28);background:rgba(9,8,14,.35);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.btn-glass:hover{border-color:rgba(244,242,251,.7)}
+.h-proof{margin:26px 0 0;font-size:14px;color:var(--mute-d);max-width:46ch;padding-left:12px;border-left:2px solid var(--purple)}
+.h-proof b{color:var(--fg-d);font-weight:600}
+.h-play{display:flex;align-items:center;gap:14px;padding:10px 18px 10px 10px;border-radius:999px;border:1px solid rgba(244,242,251,.2);background:rgba(9,8,14,.55);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);cursor:pointer;text-align:left;color:var(--fg-d);transition:border-color .2s,transform .2s;min-height:44px}
+.h-play:hover{border-color:var(--neon);transform:translateY(-1px)}
+.pb{flex:none;width:52px;height:52px;border-radius:50%;background:var(--neon);color:var(--ink);display:grid;place-items:center;box-shadow:0 0 0 8px rgba(225,255,4,.16)}
+.pb svg{width:18px;height:18px;margin-left:3px}
+.h-play b{display:block;font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.02em}
+.h-play small{display:block;font-size:12.5px;color:var(--mute-d)}
+.h-play .d{font-family:var(--mono);font-size:11.5px;background:rgba(255,255,255,.12);border-radius:6px;padding:3px 8px;margin-left:6px}
+.player{position:relative;border-radius:18px;overflow:hidden;background:#000;aspect-ratio:16/9;box-shadow:0 40px 120px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08)}
+.player video,.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
+.soon{position:absolute;left:50%;top:16px;transform:translateX(-50%);background:var(--ink);color:var(--fg-d);border:1px solid var(--line-d);border-radius:999px;font-size:13.5px;padding:7px 14px;white-space:nowrap;z-index:2}
+@media (max-width:900px){
+  .hero{min-height:0;display:block}
+  .h-bg{bottom:auto;height:min(46svh,380px)}
+  .h-bg::after{background:linear-gradient(180deg,rgba(9,8,14,.3) 0%,rgba(9,8,14,.12) 32%,rgba(9,8,14,.92) 66%,var(--ink) 84%)}
+  .hero-in{grid-template-columns:minmax(0,1fr);padding-block:calc(min(46svh,380px) - 90px) 44px;gap:0}
+  .h-play{position:absolute;top:calc((min(46svh,380px) - 110px) / 2 - 30px);left:50%;transform:translateX(-50%);white-space:nowrap}
+  .h-play:hover{transform:translateX(-50%)}
+}
+@media (max-width:600px){
+  .h-eyebrow{margin-bottom:10px;font-size:10.5px}
+  .h-title{font-size:clamp(32px,9.4vw,42px)}
+  .h-stats{gap:22px;margin-top:16px}.h-stats b{font-size:32px}.h-stats b small{display:block;margin:0 0 4px;vertical-align:0}.h-stats span{font-size:13px}
+  .h-body{font-size:16px;margin-top:18px}
+  .h-cta{margin-top:20px}.h-cta .btn{flex:1 1 100%;font-size:14.5px;padding:14px;letter-spacing:-.02em}
+  .h-play{padding:7px 14px 7px 7px;gap:10px}.pb{width:42px;height:42px;box-shadow:0 0 0 6px rgba(225,255,4,.16)}.pb svg{width:15px;height:15px}.h-play b{font-size:13.5px}.h-play small{font-size:11.5px}.h-play .d{display:none}
+}
+
+/* ---------- Problem: a fundraising month filling up ---------- */
+.problem{background:var(--paper);color:var(--fg-l);padding-block:120px 110px}
+.pr-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:end}
+.pr-head .body{color:var(--mute-l)}
+.cal{margin-top:56px;background:#fff;border-radius:22px;box-shadow:0 0 0 1px var(--line-l),0 30px 80px rgba(14,12,22,.08);padding:24px}
+.cal-top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;padding:0 4px 18px}
+.cal-top .mono{color:var(--mute-l)}
+.cal-top h3{font-size:24px;font-weight:700;letter-spacing:-.03em;margin-top:6px}
+.cal-n{display:flex;align-items:baseline;gap:10px}
+.cal-n b{font-family:var(--display);font-weight:800;font-size:clamp(44px,5vw,64px);letter-spacing:-.06em;line-height:.9;color:var(--purple);font-variant-numeric:tabular-nums}
+.cal-n span{font-size:14px;color:var(--mute-l);line-height:1.3}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.cal-wd{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute-l);padding:0 6px 6px}
+.cal-d{position:relative;aspect-ratio:16/10;border-radius:10px;background:var(--paper);padding:6px 8px;font-family:var(--mono);font-size:11px;color:#A6A2B5}
+.cal-d.pad{background:transparent}
+.cal-d.ev{padding:0;background:#ECEAF3;overflow:visible}
+.ev-card{position:absolute;inset:0;border-radius:10px;overflow:hidden;opacity:0;transform:scale(.92);transition:opacity .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)}
+.ev-card img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.ev-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,8,14,0) 30%,rgba(9,8,14,.82))}
+.ev-day{position:absolute;left:6px;top:6px;z-index:2;font-family:var(--mono);font-size:11px;color:#A6A2B5;transition:color .3s,background .3s;border-radius:4px;padding:0 4px;line-height:1.5}
+.cal-d.on .ev-day{background:rgba(9,8,14,.7)}
+.ev-t{position:absolute;left:8px;bottom:7px;right:42px;z-index:2;font-family:var(--display);font-weight:600;font-size:12.5px;letter-spacing:-.01em;line-height:1.15;color:#fff}
+.ev-n{position:absolute;right:6px;bottom:6px;z-index:2;font-family:var(--mono);font-size:11px;font-weight:500;background:var(--neon);color:var(--ink);border-radius:5px;padding:2px 5px}
+.ev-stack{position:absolute;inset:0;border-radius:10px;background:#D6D1E6;transform:translate(0,0) rotate(0);transition:transform .5s cubic-bezier(.2,.7,.2,1) .15s;opacity:0}
+.ev-stack.s2{background:#C4BDDC}
+.cal-d.on .ev-card{opacity:1;transform:none}
+.cal-d.on .ev-day{color:#fff}
+.cal-d.on .ev-stack{opacity:1;transform:translate(5px,-5px) rotate(3deg)}
+.cal-d.on .ev-stack.s2{transform:translate(9px,-9px) rotate(6deg)}
+.cal-foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:16px;padding:0 4px;font-size:13px;color:var(--mute-l)}
+.cal-foot i{font-style:italic}
+@media (max-width:920px){.pr-head{grid-template-columns:minmax(0,1fr);gap:20px}.problem{padding-block:88px}}
+@media (max-width:700px){
+  .cal{padding:14px 10px;border-radius:16px;margin-top:36px}
+  .cal-grid{gap:4px}.cal-d{aspect-ratio:4/5;padding:4px;font-size:10px;border-radius:7px}
+  .cal-d.ev{border-radius:7px}.ev-card,.ev-stack{border-radius:7px}
+  .ev-t{display:none}.ev-day{left:4px;top:3px;font-size:9.5px}.ev-n{right:3px;bottom:3px;font-size:9.5px;padding:1px 3px}
+  .cal-wd{font-size:9.5px;padding:0 2px 4px;text-align:center}
+  .cal-top h3{font-size:19px}
+}
+
+/* ---------- How it works: scroll-driven workflow ---------- */
+.how{position:relative}
+.how-head{padding-top:120px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.how-head button{background:none;border:0;cursor:pointer;color:var(--purple-hi);font-weight:600;font-size:16px;text-decoration:underline;text-underline-offset:4px;padding:10px 0;min-height:44px}
+.wf-track{position:relative;height:calc(var(--n,6) * 62vh + 100svh)}
+.wf-pin{position:sticky;top:var(--nav);height:calc(100svh - var(--nav));display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.wf-pin::before{content:"";position:absolute;left:-200px;top:10%;width:720px;height:720px;background:radial-gradient(closest-side,rgba(87,65,214,.2),rgba(87,65,214,0));pointer-events:none}
+.steps{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));list-style:none;margin:0;padding:0}
+.steps::before,.steps::after{content:"";position:absolute;left:20px;right:calc(100%/6 - 20px);top:19px;height:2px;border-radius:2px;background:rgba(255,255,255,.12)}
+.steps::after{background:var(--purple-hi);right:auto;width:calc((100% - 100%/6) * var(--p,0))}
+.steps button{all:unset;cursor:pointer;display:grid;gap:8px;justify-items:start;padding:0 10px 4px 0;position:relative;z-index:1;min-height:44px}
+.steps .n{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:13px;background:var(--ink);border:2px solid rgba(255,255,255,.16);color:var(--mute-d);transition:background .3s,border-color .3s,color .3s}
+.steps .t{font-family:var(--display);font-weight:600;font-size:14.5px;letter-spacing:-.02em;color:var(--mute-d);line-height:1.25;transition:color .3s}
+.steps li.done .n{border-color:var(--purple-hi);color:var(--fg-d)}
+.steps li.cur .n{background:var(--neon);border-color:var(--neon);color:var(--ink)}
+.steps li.cur .t{color:var(--fg-d)}
+.steps button:focus-visible .n{outline:2px solid var(--neon);outline-offset:3px}
+.wf{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3.1fr);gap:40px;align-items:center;margin-top:28px}
+.wf-cap .k{color:var(--mute-d)}
+.wf-cap h3{font-size:clamp(24px,2.4vw,34px);font-weight:700;letter-spacing:-.04em;line-height:1.1;margin-top:10px}
+.wf-cap p{margin:10px 0 0;color:rgba(244,242,251,.8)}
+.wf-ctl{display:flex;gap:8px;margin-top:22px}
+.ic{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:transparent;border:1px solid rgba(244,242,251,.24);cursor:pointer;transition:border-color .2s}
+.ic:hover{border-color:rgba(244,242,251,.6)}.ic svg{width:16px;height:16px}
+.wf-hint{margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute-d)}
+/* product window rebuilt from the Embark+ interface */
+.win{border-radius:16px;overflow:hidden;background:#FAFAFC;color:#1A1825;box-shadow:0 40px 120px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08)}
+.win-bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#F1EFF7;border-bottom:1px solid #E2DFEC}
+.win-bar i{width:9px;height:9px;border-radius:50%;background:#D5D1E2}
+.app{font-family:var(--body);font-size:13px;line-height:1.4;height:clamp(360px,calc(100svh - var(--nav) - 230px),520px);overflow:hidden;position:relative}
+.ap-top{display:flex;align-items:center;gap:14px;padding:10px 16px;background:#fff;border-bottom:1px solid #ECEAF1}
+.ap-top img{height:12px;width:auto}
+.ap-tabs{display:flex;gap:2px;background:#F3F2F7;border-radius:8px;padding:2px;font-size:12px}
+.ap-tabs span{padding:4px 10px;border-radius:6px;color:#77738A}.ap-tabs .on{background:#fff;color:#1A1825;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.ap-sp{flex:1}.ap-usr{width:24px;height:24px;border-radius:50%;background:#ECEAF1;display:grid;place-items:center;font-size:10px;font-weight:600}
+.ap-main{padding:14px 18px}
+.crumb{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.crumb .c{color:#77738A}.crumb h4{margin:0;font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.03em}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;padding:3px 9px;border-radius:999px;background:#fff;border:1px solid #ECEAF1;white-space:nowrap}
+.pill.p{color:var(--purple)}.pill .dot{width:7px;height:7px;border-radius:2px;background:#1F7A4D}.pill.rw .dot{background:var(--purple);border-radius:50%}
+.stepper{display:flex;gap:20px;margin-top:12px;border-bottom:1px solid #ECEAF1;font-size:12.5px}
+.stepper span{display:flex;align-items:center;gap:6px;padding-bottom:8px;color:#77738A}
+.stepper span i{width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:10px;border:1px solid #DAD7E3}
+.stepper .ok i{background:#E9F4EE;border-color:#E9F4EE;color:#1F7A4D}
+.stepper .on{color:#1A1825;font-weight:600;box-shadow:inset 0 -2px 0 var(--purple)}.stepper .on i{background:var(--purple);border-color:var(--purple);color:#fff}
+.ap-btn{display:inline-flex;align-items:center;gap:6px;background:var(--purple);color:#fff;border-radius:8px;padding:6px 11px;font-size:12px;font-weight:600;white-space:nowrap}
+.ap-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px}
+.tbl{width:100%;border-collapse:collapse;margin-top:10px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 0 0 1px #ECEAF1;font-size:12.5px}
+.tbl th{font-weight:500;color:#77738A;text-align:left;padding:8px 10px;border-bottom:1px solid #ECEAF1;white-space:nowrap}
+.tbl td{padding:8px 10px;border-bottom:1px solid #F2F1F5;vertical-align:middle}
+.tbl tr:last-child td{border-bottom:0}
+.tbl .id{font-family:var(--mono);font-size:11.5px;white-space:nowrap}.tbl .id small{display:block;font-family:var(--body);color:#77738A;font-size:11px}
+.tbl .th{width:26px;height:32px;border-radius:4px;object-fit:cover}
+.tbl .num{text-align:right;color:#77738A;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tick{color:#1F7A4D;font-weight:700}
+.banner{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px;padding:8px 10px;border-radius:10px;background:#F0EDFC;border:1px solid #DDD7F7;font-size:12.5px}
+.banner .dot{display:inline-block;width:8px;height:8px;border-radius:2px;background:#1F7A4D;margin-right:6px}
+.grid-d{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
+.card-d{position:relative;aspect-ratio:4/5;border-radius:9px;background:#fff;box-shadow:0 0 0 1px #ECEAF1;overflow:hidden;display:grid;place-items:center;color:#A3A0B2;font-size:11.5px}
+.card-d img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.seg{display:inline-flex;background:#F3F2F7;border-radius:7px;padding:2px;font-size:11.5px}.seg span{padding:3px 8px;border-radius:5px;color:#77738A}.seg .on{background:#fff;color:#1A1825}
+.loc{display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,2.6fr);gap:10px;align-items:center;margin-top:14px}
+.loc .mst{display:grid;gap:6px}.loc .mst .card-d{box-shadow:0 0 0 2px var(--purple)}
+.loc .arr{color:var(--purple);justify-self:center}.loc .arr svg{width:30px;height:30px}
+.loc .vs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,.62fr);gap:8px;align-items:end}
+.loc .v{display:grid;gap:5px}.loc .v .card-d.st{aspect-ratio:9/16}
+.lbl{font-family:var(--mono);font-size:10.5px;color:#55516A;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rev{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:16px;margin-top:12px;background:#fff;border-radius:12px;box-shadow:0 0 0 1px #ECEAF1;padding:14px}
+.rev .thumbs{display:flex;gap:4px;margin-top:6px}.rev .thumbs i{flex:1;aspect-ratio:1;border-radius:4px;background:#ECEAF1 center/cover}
+.rev h5{margin:0;font-family:var(--mono);font-size:12px;font-weight:500;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.rev .meta{color:#77738A;margin-top:10px}
+.rev .chk2{display:flex;align-items:center;gap:7px;margin-top:10px}.rev .chk2 i{width:9px;height:9px;border-radius:2px;background:#1F7A4D}
+.rev .op{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding:9px 11px;border:1px solid #ECEAF1;border-radius:9px}
+.rev .ab{display:flex;gap:6px;margin-top:14px}
+.rev .apv{flex:1;display:flex;justify-content:center;align-items:center;gap:7px;background:var(--purple);color:#fff;border-radius:9px;padding:9px;font-weight:600;transition:background .4s}
+.rev .ab .sq{width:38px;border:1px solid #ECEAF1;border-radius:9px;display:grid;place-items:center}
+.rev.done .apv{background:#1F7A4D}
+.app [data-d]{transition:opacity .45s ease,transform .45s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0) * 90ms + 80ms)}
+.js-anim .app:not(.go) [data-d]{opacity:0;transform:translateY(8px)}
+.js-anim .app:not(.go) .card-d img{opacity:0}
+.app .card-d img{transition:opacity .5s ease;transition-delay:calc(var(--d,0) * 110ms + 350ms)}
+.app .st-flip{display:inline-grid}.app .st-flip>*{grid-area:1/1;transition:opacity .3s;transition-delay:calc(var(--d,0) * 150ms + 450ms)}
+.js-anim .app:not(.go) .st-flip .b{opacity:0}.app.go .st-flip .a{opacity:0}
+.js-anim .app:not(.go) .banner{opacity:0}.app .banner{transition:opacity .4s 1.4s}
+.js-anim .rev:not(.done) .apv .y{display:none}.rev.done .apv .n{display:none}
+.hl{background:linear-gradient(90deg,#E6E1FB,#E6E1FB) no-repeat 0 0/0 100%;transition:background-size .8s ease;transition-delay:calc(var(--d,0) * 120ms + 250ms)}
+.app.go .hl{background-size:100% 100%}
+.wf-stage .app{transition:opacity .25s ease}.wf-stage.swap .app{opacity:0}
+@media (max-width:1000px){.wf{grid-template-columns:minmax(0,1fr);gap:14px}.wf-ctl,.wf-hint{display:none}.wf-cap h3{font-size:22px;margin-top:4px}.wf-cap p{margin-top:4px;font-size:15.5px}.steps .t{font-size:12.5px}}
+@media (max-width:760px){
+  .how-head{padding-top:88px}
+  .steps .t{display:none}
+  .steps button{justify-items:center;padding:0}
+  .steps::before,.steps::after{left:calc(100%/12);right:calc(100%/12)}
+  .steps::after{right:auto}
+  .app{height:clamp(300px,calc(100svh - var(--nav) - 210px),430px);font-size:12px}
+  .ap-tabs,.ap-usr{display:none}.ap-main{padding:12px}
+  .crumb h4{font-size:16px}.crumb .c,.crumb .opt{display:none}
+  .stepper{gap:12px}.stepper span:nth-child(4){display:none}
+  .app .hide-s,.tbl td:first-child:has(.th),.tbl th:first-child:empty{display:none}
+  .tbl.sup{table-layout:fixed}.tbl.sup th:nth-child(2){width:38%}.tbl.sup th:last-child{width:86px}.tbl.sup td{overflow:hidden}
+  .tbl .id{font-size:10.5px}.tbl td,.tbl th{padding:7px 8px}.pill{font-size:10.5px;padding:2px 7px}
+  .grid-d{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-d>:nth-child(n+7){display:none}
+  .loc{grid-template-columns:minmax(0,1fr);gap:6px;margin-top:10px}.loc .arr{transform:rotate(90deg);height:18px}.loc .arr svg{width:22px;height:22px}.loc .mst{width:30%;justify-self:center}
+  .rev{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:10px;padding:10px}.rev .op:nth-of-type(2){display:none}
+}
+
+/* ---------- Create once. Adapt across markets. ---------- */
+.markets{background:var(--ink-2);position:relative;border-top:1px solid var(--line-d)}
+.mk-track{position:relative;height:calc(6 * 55vh + 100svh)}
+.mk-pin{position:sticky;top:var(--nav);height:calc(100svh - var(--nav));display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.mk-top{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
+.mk-h{font-size:clamp(30px,3.6vw,50px)}
+.mk-hint{margin:0}
+.mk-chip{display:none;margin:0;font-family:var(--mono);font-size:12px;color:var(--fg-d);background:rgba(255,255,255,.07);border-radius:7px;padding:5px 10px;text-align:center}
+.mk-dims{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:28px 0 0;padding:0}
+.mk-dims li{font-size:14px;padding:7px 13px;border-radius:999px;border:1px solid rgba(236,232,255,.16);color:rgba(244,242,251,.85)}
+.mk-ui{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,4.4fr) minmax(0,3.6fr);gap:40px;margin-top:32px;align-items:center}
+.mk-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-d)}
+.mk-list button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 12px;border-bottom:1px solid var(--line-d);transition:background .25s;min-height:64px;position:relative}
+.mk-list button::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--neon);transform:scaleY(0);transition:transform .3s}
+.mk-list button:hover{background:rgba(255,255,255,.03)}
+.mk-list button[aria-selected="true"]{background:rgba(87,65,214,.16)}
+.mk-list button[aria-selected="true"]::before{transform:none}
+.mk-list button:focus-visible{outline:2px solid var(--neon);outline-offset:-2px}
+.mk-code{font-family:var(--mono);font-size:12px;font-weight:500;width:44px;height:30px;border-radius:7px;display:grid;place-items:center;background:rgba(255,255,255,.07);color:var(--fg-d)}
+.mk-list [aria-selected="true"] .mk-code{background:var(--neon);color:var(--ink)}
+.mk-nm b{display:block;font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:-.02em}
+.mk-nm small{display:block;font-size:13px;color:var(--mute-d)}
+.mk-val{font-family:var(--display);font-weight:700;font-size:15px;white-space:nowrap}
+.mk-new{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--purple-hi);margin-left:6px}
+.mk-stage{display:grid;justify-items:center;gap:16px}
+.fmt-seg{display:inline-flex;gap:2px;padding:3px;border-radius:999px;background:rgba(255,255,255,.06)}
+.fmt-seg button{border:0;background:none;cursor:pointer;border-radius:999px;padding:8px 14px;min-height:40px;font-family:var(--mono);font-size:12px;color:var(--mute-d);transition:background .2s,color .2s}
+.fmt-seg button[aria-pressed="true"]{background:var(--fg-d);color:var(--ink)}
+.cv-wrap{position:relative;width:100%;max-width:min(360px,calc((100svh - var(--nav) - 290px) * .8));display:grid;place-items:center;transition:max-width .45s cubic-bezier(.2,.7,.2,1)}
+.cv-wrap.story{max-width:min(260px,calc((100svh - var(--nav) - 290px) * .5625))}
+.cv-stack{position:absolute;inset:0;pointer-events:none}
+.cv-stack i{position:absolute;inset:0;border-radius:16px;background:#2A2540;opacity:0;transition:transform .45s,opacity .3s}
+.cv-wrap.carousel .cv-stack i{opacity:1}
+.cv-wrap.carousel .cv-stack i:nth-child(1){transform:translate(14px,10px) rotate(2.5deg)}
+.cv-wrap.carousel .cv-stack i:nth-child(2){transform:translate(26px,18px) rotate(5deg);background:#221E36}
+/* the creative: one appeal, re-set per market */
+.cv{--cvw:400;position:relative;width:100%;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:#0A1B33;box-shadow:0 40px 90px rgba(0,0,0,.55);container-type:inline-size;transition:aspect-ratio .45s cubic-bezier(.2,.7,.2,1)}
+.cv-wrap.story .cv{aspect-ratio:9/16}
+.cv-ph{position:absolute;left:0;right:0;top:0;height:74%;background:url(img/photo-appeal.webp) center 18%/cover}
+.cv-wrap.story .cv-ph{height:66%}
+.cv-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,27,51,0) 45%,rgba(10,27,51,.85) 82%,#0A1B33)}
+.cv-tag{position:absolute;top:4.5cqw;left:4.5cqw;background:#FFE500;color:#111;font-family:'Montserrat',sans-serif;font-weight:800;font-style:italic;font-size:4.2cqw;padding:.8cqw 2.2cqw;box-shadow:.8cqw .8cqw 0 #111;display:flex;align-items:center;gap:1cqw}
+.cv-tag svg{width:3.4cqw;height:3.8cqw}
+.cv-logo{position:absolute;top:4.5cqw;right:4.5cqw;display:flex;align-items:center;gap:1.8cqw;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:4cqw;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.cv-logo i{width:6.6cqw;height:6.6cqw;border-radius:50%;background:#fff;display:grid;place-items:center}
+.cv-logo i svg{width:3.6cqw;height:3.6cqw}
+.cv-logo s{width:.35cqw;height:5cqw;background:#fff;text-decoration:none}
+.cv-txt{position:absolute;left:5cqw;right:5cqw;bottom:5.5cqw;text-align:center;font-family:'Montserrat',sans-serif;color:#fff;transition:opacity .3s ease,transform .35s ease}
+.cv-wrap.story .cv-txt{bottom:12cqw}
+.cv.swap .cv-txt{opacity:0;transform:translateY(2cqw)}
+.cv-stat{display:inline-block;background:#E8222E;font-weight:900;font-size:9.4cqw;line-height:1.05;padding:.4cqw 2cqw;letter-spacing:-.02em}
+.cv-h{margin:1.6cqw 0 0;font-weight:900;font-size:5.4cqw;line-height:1.12;text-transform:uppercase}
+.cv-h em{font-style:normal;display:inline-block;background:#1EA0E8;padding:0 1.4cqw;margin:.4cqw 0}
+.cv-lead{margin:1.8cqw 0 0;font-weight:600;font-size:3.6cqw;opacity:.95}
+.cv-cta{display:inline-flex;align-items:center;gap:2cqw;margin-top:3cqw;border:.4cqw solid #fff;border-radius:99px;padding:1.4cqw 3.6cqw;font-weight:800;font-size:3.1cqw;white-space:nowrap}
+.cv-cta b{color:#3FB5F2;font-size:3.9cqw;font-weight:900;padding-left:2cqw;border-left:.35cqw solid #fff}
+.cv[dir="rtl"] .cv-txt,.cv[dir="rtl"] .cv-cta{font-family:'Cairo',sans-serif}
+.cv[dir="rtl"] .cv-h{font-size:6cqw;line-height:1.3;text-transform:none}
+.cv[dir="rtl"] .cv-stat{font-size:9cqw;line-height:1.25}
+.cv[dir="rtl"] .cv-cta b{border-left:0;border-right:.35cqw solid #fff;padding:0 2cqw 0 0}
+.cv-slides{position:absolute;right:4.5cqw;top:14cqw;font-family:var(--mono);font-size:3cqw;background:rgba(9,8,14,.8);color:#fff;border-radius:1.4cqw;padding:.6cqw 1.6cqw;display:none}
+.cv-wrap.carousel .cv-slides{display:block}
+.mk-spec{margin:0;display:grid;border-top:1px solid var(--line-d)}
+.mk-spec div{display:grid;grid-template-columns:7.2em minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--line-d)}
+.mk-spec dt{font-size:13.5px;color:var(--mute-d)}
+.mk-spec dd{margin:0;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.015em}
+.mk-spec dd.chg{color:var(--neon)}
+.mk-spec bdi{font-family:'Cairo',sans-serif;display:block;text-align:right}
+.mk-note{margin:16px 0 0;font-size:13px;color:var(--mute-d);font-style:italic}
+@media (max-width:1100px){.mk-ui{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 32px;margin-top:20px}.mk-list-col{grid-column:1/-1}.mk-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;border:0}.mk-list button{border:1px solid var(--line-d);border-radius:12px;grid-template-columns:40px minmax(0,1fr);min-height:56px;padding:10px}.mk-val{display:none}.mk-list button::before{display:none}}
+@media (max-width:1100px){.mk-hint{display:none}}
+@media (max-width:640px){
+  .mk-ui{grid-template-columns:minmax(0,1fr);gap:14px;margin-top:16px}
+  .mk-ui>div:last-child{display:none}.mk-chip{display:block}.mk-hint{display:none}.mk-stage{gap:10px}
+  .cv-wrap{max-width:min(300px,calc((100svh - var(--nav) - 380px) * .8))}.cv-wrap.story{max-width:min(220px,calc((100svh - var(--nav) - 380px) * .5625))}
+  .mk-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .mk-list button{grid-template-columns:minmax(0,1fr);justify-items:start;gap:2px;padding:7px 10px;min-height:48px}
+  .mk-code{width:auto;height:auto;padding:2px 6px;font-size:11px}.mk-nm b{font-size:14px}.mk-nm small,.mk-new{display:none}
+  .mk-dims{display:none}
+}
+
+/* ---------- Results ---------- */
+.results{background:var(--purple);color:#fff;padding-block:120px;position:relative;overflow:hidden}
+.results .mono{color:rgba(255,255,255,.72)}
+.r-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap}
+.r-head .sec-h{margin-top:12px;max-width:14ch}
+.r-cmp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin-top:56px;border-top:1px solid rgba(255,255,255,.28)}
+.r-blk{padding:32px 40px 32px 0}
+.r-blk+.r-blk{padding:32px 0 32px 40px;border-left:1px solid rgba(255,255,255,.28)}
+.r-big{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.r-big small{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.r-big b{font-family:var(--display);font-weight:800;font-size:clamp(64px,7.4vw,112px);line-height:.9;letter-spacing:-.065em;font-variant-numeric:tabular-nums}
+.r-blk>p{margin:10px 0 0;font-size:18px;font-family:var(--display);font-weight:600;letter-spacing:-.02em}
+.bars{margin-top:26px;display:grid;gap:12px}
+.bar{display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:14px;align-items:center;font-size:13.5px;color:rgba(255,255,255,.82)}
+.bar .tr{height:14px;border-radius:7px;background:rgba(255,255,255,.14);overflow:hidden}
+.bar .tr i{display:block;height:100%;border-radius:7px;background:rgba(255,255,255,.55);width:100%;transition:width 1.1s cubic-bezier(.6,0,.2,1) .2s}
+.bar.e .tr i{background:var(--neon)}
+.js-anim .r-blk:not(.in) .bar.e .tr i{width:100%!important}
+.r-day{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:center;padding:36px 0;border-top:1px solid rgba(255,255,255,.28);border-bottom:1px solid rgba(255,255,255,.28)}
+.r-day .r-big b{color:var(--neon)}
+.r-day p{margin:10px 0 0;font-size:18px;font-family:var(--display);font-weight:600;letter-spacing:-.02em;max-width:22ch}
+.r-strip{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px}
+.r-strip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:8px;box-shadow:0 10px 24px rgba(20,10,60,.35)}
+.r-strip img:nth-child(even){transform:translateY(14px)}
+.r-foot{margin-top:40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.r-foot p{margin:0;font-size:14px;color:rgba(255,255,255,.85);max-width:60ch}
+.r-foot p+p{margin-top:6px;font-style:italic;font-size:12.5px;color:rgba(255,255,255,.7)}
+@media (max-width:860px){
+  .results{padding-block:88px}
+  .r-cmp{grid-template-columns:minmax(0,1fr)}
+  .r-blk,.r-blk+.r-blk{padding:26px 0;border-left:0}.r-blk+.r-blk{border-top:1px solid rgba(255,255,255,.28)}
+  .r-day{grid-template-columns:minmax(0,1fr);gap:22px}
+  .r-strip{grid-template-columns:repeat(4,minmax(0,1fr))}.r-strip img:nth-child(n+9){display:none}
+  .bar{grid-template-columns:7.2em minmax(0,1fr);font-size:13px}
+}
+
+/* ---------- Gallery ---------- */
+.create{padding-block:120px}
+.cr-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end}
+.cr-head .body{color:rgba(244,242,251,.78);margin:0}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
+.filters button{border:1px solid rgba(236,232,255,.18);background:transparent;border-radius:999px;padding:9px 16px;min-height:44px;cursor:pointer;font-family:var(--display);font-weight:600;font-size:14px;color:var(--mute-d);transition:all .2s}
+.filters button[aria-pressed="true"]{background:var(--fg-d);color:var(--ink);border-color:var(--fg-d)}
+.gal{columns:5;column-gap:18px;margin-top:24px;list-style:none;padding:0}
+.gal li{break-inside:avoid;margin-bottom:24px}.gal li[hidden]{display:none}
+.gal button{all:unset;cursor:zoom-in;display:block;border-radius:12px;width:100%}
+.gal button:focus-visible{outline:2px solid var(--neon);outline-offset:4px}
+.gal .art{position:relative;border-radius:12px;overflow:hidden;background:var(--ink-3);box-shadow:0 0 0 1px rgba(255,255,255,.06)}
+.gal .art img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .5s ease}
+.gal .story .art img{aspect-ratio:9/16}
+.gal button:hover .art img{transform:scale(1.03)}
+.gal .fmt{position:absolute;right:8px;top:8px;font-family:var(--mono);font-size:10.5px;background:rgba(9,8,14,.85);border-radius:5px;padding:3px 7px}
+.gal .ct{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:6px 10px;margin-top:10px}
+.gal .ct b{font-family:var(--display);font-weight:600;font-size:14.5px;letter-spacing:-.015em;line-height:1.3}
+.gal .tag{flex:none;font-family:var(--mono);font-size:11px;color:var(--ink);background:var(--neon);border-radius:5px;padding:2px 7px}
+.js-anim .gal li{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
+.js-anim .gal li.seen{opacity:1;transform:none}
+.create .cap{color:var(--mute-d)}
+@media (max-width:1080px){.gal{columns:4}}
+@media (max-width:760px){.cr-head{grid-template-columns:minmax(0,1fr);gap:16px}.gal{columns:2;column-gap:14px}.create{padding-block:88px}}
+.lb{position:fixed;inset:0;z-index:80;background:rgba(9,8,14,.95);display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:max(14px,env(safe-area-inset-top)) var(--gut-r) max(18px,env(safe-area-inset-bottom)) var(--gut-l)}
+.lb[hidden]{display:none}
+.lb-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.lb-top span{font-family:var(--mono);font-size:12px;color:var(--mute-d)}
+.lb-fig{margin:0;display:grid;place-items:center;min-height:0;padding:14px 0}
+.lb-fig img{max-height:100%;max-width:min(100%,560px);width:auto;border-radius:12px;object-fit:contain}
+.lb-fig .player{width:min(100%,1000px)}
+.lb-cap{display:flex;justify-content:space-between;align-items:center;gap:14px;max-width:1100px;width:100%;margin:0 auto}
+.lb-cap b{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
+.lb-cap small{display:block;color:var(--mute-d);font-size:13px;margin-top:2px}
+.lb-nav{display:flex;gap:8px}
+
+/* ---------- Who ---------- */
+.who{background:var(--white);color:var(--fg-l);padding-block:110px}
+.who-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;margin-top:52px;list-style:none;padding:0}
+.who-grid li{border-top:2px solid var(--fg-l);padding-top:18px}
+.who-grid h3{font-size:20px;font-weight:700;letter-spacing:-.03em}
+.who-grid p{margin:10px 0 0;color:var(--mute-l);font-size:16px}
+@media (max-width:900px){.who-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.who-grid{grid-template-columns:minmax(0,1fr);gap:24px;margin-top:36px}.who{padding-block:80px}}
+
+/* ---------- FAQs (live site) ---------- */
+.faqs{background:var(--paper);color:var(--fg-l);padding-block:120px}
+.faq-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:64px;align-items:start}
+.faq-grid h2{font-size:clamp(34px,4vw,56px);font-weight:800;letter-spacing:-.05em;line-height:1}
+.faq-grid .side p{color:var(--mute-l);margin:16px 0 0;max-width:34ch}
+.faq-grid .side{position:sticky;top:100px}
+.acc{border-top:1px solid var(--line-l)}
+.acc details{border-bottom:1px solid var(--line-l)}
+.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-family:var(--display);font-weight:600;font-size:clamp(17px,1.5vw,20px);letter-spacing:-.02em;line-height:1.3}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .pm{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line-l);position:relative;transition:background .25s,border-color .25s}
+.acc summary .pm::before,.acc summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.6px;background:var(--fg-l);transform:translate(-50%,-50%);transition:transform .3s}
+.acc summary .pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+.acc details[open] summary .pm{background:var(--purple);border-color:var(--purple)}
+.acc details[open] summary .pm::before,.acc details[open] summary .pm::after{background:#fff}
+.acc details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.acc .a{padding:0 50px 24px 0;color:var(--mute-l);font-size:16px;line-height:1.6}
+.acc .a p{margin:0;max-width:62ch}
+@media (max-width:920px){.faq-grid{grid-template-columns:minmax(0,1fr);gap:28px}.faq-grid .side{position:static}.faqs{padding-block:88px}.acc .a{padding-right:0}}
+
+/* ---------- Ramadan calculator: traditional route vs Embark+ ---------- */
+.price{padding-block:130px;position:relative;overflow:hidden}
+.price::before{content:"";position:absolute;right:-240px;top:10%;width:760px;height:760px;background:radial-gradient(closest-side,rgba(87,65,214,.26),rgba(87,65,214,0));pointer-events:none}
+.p-grid{position:relative;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
+.p-hook h2{font-size:clamp(38px,4.4vw,64px);font-weight:800;line-height:.98;letter-spacing:-.06em}
+.p-hook h2 .new{color:var(--neon)}
+.p-sub{font-family:var(--display);font-weight:600;font-size:clamp(19px,1.7vw,23px);letter-spacing:-.025em;margin:22px 0 0}
+.p-note{margin:16px 0 0;color:var(--mute-d);font-size:15px;max-width:46ch}
+.p-note b{color:var(--fg-d);font-weight:600}
+.est{border:1px solid var(--line-d);border-radius:22px;background:rgba(255,255,255,.025);padding:30px}
+.est-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.est-h label{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.02em}
+.est-h output{font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.est-h output small{font-size:14px;font-weight:500;color:var(--mute-d);letter-spacing:0;margin-left:6px}
+.est input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;margin:10px 0 2px;cursor:pointer}
+.est input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--purple) var(--f,20%),rgba(255,255,255,.1) var(--f,20%))}
+.est input[type=range]::-moz-range-track{height:6px;border-radius:3px;background:rgba(255,255,255,.1)}
+.est input[type=range]::-moz-range-progress{height:6px;border-radius:3px;background:var(--purple)}
+.est input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:0;margin-top:-9px;box-shadow:0 0 0 6px rgba(140,123,255,.3)}
+.est input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#fff;border:0;box-shadow:0 0 0 6px rgba(140,123,255,.3)}
+.est input[type=range]:focus-visible{outline:none}
+.est input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px var(--neon)}
+.est input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 4px var(--neon)}
+.est-scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--mute-d)}
+.per{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px;flex-wrap:wrap}
+.per span{font-size:14px;color:var(--mute-d)}
+.per .fmt-seg button{font-family:var(--display);font-weight:600;font-size:13.5px}
+.cmp{margin-top:26px;padding-top:22px;border-top:1px solid var(--line-d);display:grid;gap:18px}
+.cmp-row{display:grid;gap:8px}
+.cmp-row .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.cmp-row .top span{font-size:14px;color:var(--mute-d)}.cmp-row .top span b{display:block;color:var(--fg-d);font-family:var(--display);font-weight:600;font-size:15.5px;letter-spacing:-.015em}
+.cmp-row .top strong{font-family:var(--display);font-weight:700;font-size:clamp(22px,2.2vw,28px);letter-spacing:-.04em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cmp-row .tr{height:12px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden}
+.cmp-row .tr i{display:block;height:100%;border-radius:6px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+.cmp-row.t .tr i{background:rgba(244,242,251,.45)}.cmp-row.t strong{color:var(--mute-d);text-decoration:line-through;text-decoration-color:rgba(225,255,4,.7);text-decoration-thickness:2px}
+.cmp-row.e .tr i{background:var(--purple-hi)}.cmp-row.e strong{color:var(--purple-hi)}
+.cmp-row small{font-size:12.5px;color:var(--mute-d);font-variant-numeric:tabular-nums}
+.save{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-top:24px;padding:20px 22px;border-radius:16px;background:rgba(225,255,4,.08);border:1px solid rgba(225,255,4,.35)}
+.save span{font-size:14px;color:var(--fg-d)}
+.save b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(34px,3.6vw,48px);letter-spacing:-.05em;line-height:1;color:var(--neon);font-variant-numeric:tabular-nums;margin-top:4px}
+.save em{font-style:normal;font-family:var(--display);font-weight:700;font-size:22px;color:var(--neon)}
+.disc{position:relative;margin:48px 0 0;font-size:12.5px;line-height:1.55;color:var(--mute-d);font-style:italic;max-width:96ch}
+@media (max-width:1000px){.p-grid{grid-template-columns:minmax(0,1fr);gap:40px}}
+@media (max-width:600px){.price{padding-block:88px}.est{padding:20px;border-radius:18px}.est-h output{font-size:26px}.save{padding:16px}}
+
+/* ---------- Book a demo ---------- */
+.final{background:var(--ink-2);border-top:1px solid var(--line-d);padding-block:120px 100px;position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;right:-240px;bottom:-240px;width:820px;height:820px;background:radial-gradient(closest-side,rgba(87,65,214,.3),rgba(87,65,214,0));pointer-events:none}
+.final-grid{position:relative;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px;align-items:start}
+.final h2{font-size:clamp(38px,5vw,74px);font-weight:800;line-height:.98;letter-spacing:-.055em}
+.final .body{color:rgba(244,242,251,.8);font-size:18px;margin-top:24px}
+.contact{margin-top:32px;max-width:440px}
+.contact a{text-decoration:none;display:flex;justify-content:space-between;gap:16px;align-items:center;border:1px solid var(--line-d);border-radius:12px;padding:12px 14px;min-height:52px;transition:border-color .2s,background .2s}
+.contact a:hover{border-color:var(--purple-hi);background:rgba(87,65,214,.08)}
+.contact span{font-size:14px;color:var(--mute-d)}
+.contact b{font-weight:600;text-align:right;overflow-wrap:anywhere}
+.form{position:relative;background:var(--ink);border:1px solid var(--line-d);border-radius:22px;padding:30px;display:grid;gap:16px;box-shadow:0 40px 100px rgba(0,0,0,.45)}
+.form h3{font-size:22px;font-weight:700;letter-spacing:-.03em}
+.form .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.fld{display:grid;gap:6px}
+.fld label{font-size:13.5px;font-weight:500}
+.fld input{font:inherit;font-size:16px;color:var(--fg-d);background:var(--ink-2);border:1px solid rgba(236,232,255,.16);border-radius:11px;padding:12px 13px;width:100%;min-height:48px;transition:border-color .2s,box-shadow .2s}
+.fld input:focus{outline:none;border-color:var(--purple-hi);box-shadow:0 0 0 3px rgba(140,123,255,.25)}
+.fld.bad input{border-color:#E4566A}
+.form .btn{width:100%;padding:15px 22px;font-size:16px}
+.form .btn[disabled]{opacity:.6;cursor:progress}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.status{border-radius:12px;padding:14px 16px;font-size:14.5px;line-height:1.5}
+.status.ok{background:rgba(225,255,4,.1);border:1px solid rgba(225,255,4,.45)}
+.status.no{background:rgba(228,86,106,.1);border:1px solid rgba(228,86,106,.45)}
+.status a{color:inherit;font-weight:600}
+.f-err{font-size:13.5px;color:#FF8A9A;margin:0}.f-err:empty{display:none}
+@media (max-width:920px){.final-grid{grid-template-columns:minmax(0,1fr);gap:40px}.final{padding-block:88px 72px}}
+@media (max-width:520px){.form{padding:20px;border-radius:16px}.form .row{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- Footer ---------- */
+.foot{background:var(--ink);border-top:1px solid var(--line-d);padding-block:40px 48px;color:var(--mute-d);font-size:14px}
+.foot .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.foot img{height:40px;width:auto}
+.foot p{margin:0}.foot a{text-underline-offset:3px}
+@media (max-width:760px){.foot{padding-bottom:calc(96px + env(safe-area-inset-bottom))}}
+
+/* sticky mobile CTA */
+.mcta{display:none}
+@media (max-width:760px){
+  .mcta{display:flex;position:fixed;left:50%;width:min(300px,calc(100% - 32px));transform:translate(-50%,170%);bottom:max(12px,env(safe-area-inset-bottom));z-index:45;justify-content:center;padding:12px;border-radius:999px;background:var(--neon);color:var(--ink);font-family:var(--display);font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,.45);transition:transform .35s ease}
+  .mcta.show{transform:translate(-50%,0)}
+}
+
+.js-anim .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js-anim .rv.in{opacity:1;transform:none}
+.js-anim .rv.d1{transition-delay:.08s}.js-anim .rv.d2{transition-delay:.16s}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
+}
+</style>
+</head>
+<body>
+
+<a class="sr" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="nav-logo" href="#top" aria-label="Embark+ home"><img src="img/logo-white-neon.png" alt="Embark+" width="900" height="128"></a>
+    <ul class="nav-links">
+      <li><a href="#problem">The problem</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#create">What you can create</a></li>
+      <li><a href="#faqs">FAQs</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="btn btn-neon" href="#demo" data-track="nav_demo_click">Book a demo</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#problem">The problem</a><a href="#how">How it works</a><a href="#results">Results</a><a href="#create">What you can create</a><a href="#faqs">FAQs</a>
+  <a class="btn btn-neon" href="#demo" data-track="nav_demo_click">Book a demo</a>
+</div>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO: full bleed. Background loop is set in CONFIG.HERO_LOOP_SRC; the full video in CONFIG.VIDEO_SRC. -->
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="h-bg" aria-hidden="true"><video id="heroLoop" muted playsinline loop preload="none" poster="img/hero-loop-poster.webp"></video></div>
+  <div class="wrap hero-in">
+    <div class="h-copy">
+      <p class="h-eyebrow mono"><i aria-hidden="true"></i>Branded content creation for charities</p>
+      <h1 id="heroTitle" class="h-title"><span>More fundraising content.</span> <span>Less time. Less cost.</span></h1>
+      <ul class="h-stats">
+        <li><b><small>Up to</small>70%</b><span>lower content production costs</span></li>
+        <li><b><small>Up to</small>80%</b><span>less production time</span></li>
+      </ul>
+      <p class="h-body">Create fundraising content once. Adapt it for different programmes, donation values, audiences and markets, without starting from scratch every time.</p>
+      <div class="h-cta">
+        <a class="btn btn-neon" href="#cal" data-track="hero_cta_click" data-label="primary">See what Embark+ can create for your charity</a>
+        <button class="btn btn-glass" type="button" id="watchBtn" data-track="hero_cta_click" data-label="watch_video">Watch the 60-second video</button>
+      </div>
+      <p class="h-proof"><b>250+ unique pieces a day across 15+ markets</b> for a global Islamic charity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROBLEM: a fundraising month -->
+<section class="problem" id="problem" aria-labelledby="probTitle">
+  <div class="wrap">
+    <div class="pr-head">
+      <h2 id="probTitle" class="sec-h rv">Your fundraising calendar doesn't slow down. Your content production shouldn't hold it back.</h2>
+      <div class="rv d1">
+        <p class="lead">A single appeal can need multiple creative versions.</p>
+        <p class="body">Different donation values, different audiences, different languages and different formats. Every new version can mean more briefing, design and review time.</p>
+      </div>
+    </div>
+    <div class="cal" id="cal">
+      <div class="cal-top">
+        <div><p class="mono" style="margin:0">An illustrative four weeks</p><h3>Every appeal needs its own set of versions.</h3></div>
+        <p class="cal-n" style="margin:0" aria-live="polite"><b id="calN">0</b><span>versions to<br>produce</span></p>
+      </div>
+      <div class="cal-grid" id="calGrid" aria-label="Fundraising month calendar"></div>
+      <p class="cal-foot"><span>Each appeal × donation values × markets × languages × formats.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS: scroll to run the workflow -->
+<section class="how" id="how" aria-labelledby="howTitle">
+  <div class="wrap how-head">
+    <h2 id="howTitle" class="sec-h">One brief. Multiple fundraising creatives.</h2>
+    <button type="button" id="fullWf" data-track="workflow_interaction" data-label="see_full_workflow">See the full workflow</button>
+  </div>
+  <div class="wf-track" id="wfTrack">
+    <div class="wf-pin" id="wfPin">
+      <div class="wrap">
+        <ol class="steps" id="steps" aria-label="Workflow stages"></ol>
+        <div class="wf">
+          <div class="wf-cap" aria-live="polite">
+            <p class="k mono" id="wfK">Stage 1 of 6</p>
+            <h3 id="wfT">Brief</h3>
+            <p id="wfP">Create a campaign brief.</p>
+            <div class="wf-ctl">
+              <button class="ic" type="button" id="wfPrev" aria-label="Previous stage"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3L5 8l5 5"/></svg></button>
+              <button class="ic" type="button" id="wfNext" aria-label="Next stage"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3l5 5-5 5"/></svg></button>
+            </div>
+            <p class="wf-hint">Scroll to move through the workflow</p>
+          </div>
+          <div class="wf-stage" id="wfStage">
+            <div class="win" aria-label="Embark+ product screen"><div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div><div class="app" id="app"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREATE ONCE. ADAPT ACROSS MARKETS. -->
+<section class="markets" id="markets" aria-labelledby="mkTitle">
+  <div class="mk-track" id="mkTrack">
+  <div class="mk-pin" id="mkPin">
+  <div class="wrap">
+    <div class="mk-top"><h2 id="mkTitle" class="sec-h mk-h">Create once. Adapt across markets.</h2><p class="wf-hint mk-hint">Scroll to change market</p></div>
+    <div class="mk-ui">
+      <div class="mk-list-col">
+        <div class="mk-list" role="tablist" aria-label="Choose a market" id="mkList"></div>
+      </div>
+      <div class="mk-stage" id="mkPanel" role="tabpanel">
+        <div class="fmt-seg" role="group" aria-label="Format" id="fmtSeg">
+          <button type="button" data-f="post" aria-pressed="true">Post 4:5</button>
+          <button type="button" data-f="story" aria-pressed="false">Story 9:16</button>
+          <button type="button" data-f="carousel" aria-pressed="false">Carousel</button>
+        </div>
+        <div class="cv-wrap" id="cvWrap">
+          <div class="cv-stack" aria-hidden="true"><i></i><i></i></div>
+          <div class="cv" id="cv" role="img" aria-label="">
+            <div class="cv-ph"></div>
+            <span class="cv-tag"><svg viewBox="0 0 12 14" fill="currentColor"><path d="M6 0a5 5 0 0 0-5 5c0 3.8 5 9 5 9s5-5.2 5-9a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg><span id="cvTag">GAZA</span></span>
+            <span class="cv-logo"><i><svg viewBox="0 0 20 18" fill="#1E9BE0"><path d="M10 18S0 11.6 0 5.3A5.1 5.1 0 0 1 10 2.7a5.1 5.1 0 0 1 10 2.6C20 11.6 10 18 10 18z"/></svg></i><s></s>Charity</span>
+            <div class="cv-txt" id="cvTxt"></div>
+            <span class="cv-slides">1/6</span>
+          </div>
+        </div>
+        <p class="mk-chip" id="mkChip"></p>
+      </div>
+      <div>
+        <dl class="mk-spec" id="mkSpec"></dl>
+        <p class="mk-note" id="mkNote"></p>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results" id="results" aria-labelledby="resTitle">
+  <div class="wrap">
+    <div class="r-head rv">
+      <div><p class="mono" style="margin:0">The results</p><h2 id="resTitle" class="sec-h">The numbers speak for themselves.</h2></div>
+      <a class="btn btn-neon" href="#demo" data-track="results_cta_click">See what Embark+ can create for your charity</a>
+    </div>
+    <div class="r-cmp">
+      <div class="r-blk rv">
+        <div class="r-big"><small>Up to</small><b data-count="70" data-suf="%">70%</b></div>
+        <p>lower content production costs.</p>
+        <div class="bars" aria-hidden="true">
+          <div class="bar"><span>Traditional</span><span class="tr"><i></i></span></div>
+          <div class="bar e"><span>With Embark+</span><span class="tr"><i style="width:30%"></i></span></div>
+        </div>
+      </div>
+      <div class="r-blk rv d1">
+        <div class="r-big"><small>Up to</small><b data-count="80" data-suf="%">80%</b></div>
+        <p>less time spent producing content.</p>
+        <div class="bars" aria-hidden="true">
+          <div class="bar"><span>Traditional</span><span class="tr"><i></i></span></div>
+          <div class="bar e"><span>With Embark+</span><span class="tr"><i style="width:20%"></i></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="r-day rv">
+      <div>
+        <div class="r-big"><small>Every day</small><b data-count="250" data-suf="+">250+</b></div>
+        <p>unique content pieces across 15+ markets.</p>
+      </div>
+      <div class="r-strip" id="rStrip" aria-hidden="true"></div>
+    </div>
+    <div class="r-foot rv">
+      <div>
+        <p>The last figure is from a live deployment with a global Islamic charity.</p>
+        <p>Reported results. Savings are up to figures and depend on production scope and requirements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU CAN CREATE -->
+<section class="create" id="create" aria-labelledby="crTitle">
+  <div class="wrap">
+    <div class="cr-head rv">
+      <h2 id="crTitle" class="sec-h">More ways to support every fundraising priority.</h2>
+      <p class="body">Static posts, carousels, stories and reels, in multiple languages, with reel voiceovers in multiple languages too.</p>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filter by format">
+      <button type="button" aria-pressed="true" data-f="all">All</button>
+      <button type="button" aria-pressed="false" data-f="post">Posts</button>
+      <button type="button" aria-pressed="false" data-f="story">Stories</button>
+      <button type="button" aria-pressed="false" data-f="carousel">Carousels</button>
+    </div>
+    <ul class="gal" id="gal"></ul>
+    <p class="cap">Real creatives produced with Embark+ for a global Islamic charity. Charity branding replaced with a placeholder.</p>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="who" aria-labelledby="whoTitle">
+  <div class="wrap">
+    <h2 id="whoTitle" class="sec-h rv" style="max-width:20ch">Built for the people responsible for charity fundraising content.</h2>
+    <ul class="who-grid">
+      <li class="rv"><h3>Marketing teams</h3><p>Get more creative output from existing production resources.</p></li>
+      <li class="rv d1"><h3>Digital fundraising teams</h3><p>Adapt creative for different audiences, donation values and markets.</p></li>
+      <li class="rv d2"><h3>Fundraising teams</h3><p>Support more appeals and programmes with relevant fundraising content.</p></li>
+      <li class="rv d2"><h3>Content and creative teams</h3><p>Reduce repetitive production work while maintaining brand consistency.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQS -->
+<section class="faqs" id="faqs" aria-labelledby="faqTitle">
+  <div class="wrap faq-grid">
+    <div class="side">
+      <h2 id="faqTitle">Frequently asked questions.</h2>
+      <p>What charity teams ask before they book a demo.</p>
+    </div>
+    <div class="acc" id="acc">
+      <details><summary>Does Embark+ replace our existing creative team?<span class="pm" aria-hidden="true"></span></summary><div class="a"><p>No. It gives your team a way to create and adapt fundraising content with less repeated production work. Your team retains control of its brand, messaging and approvals.</p></div></details>
+      <details><summary>Can we use our existing brand guidelines?<span class="pm" aria-hidden="true"></span></summary><div class="a"><p>Your brand requirements and approved assets are set up as part of onboarding. We'll show you the brand controls available in the demo.</p></div></details>
+      <details><summary>Can content be adapted for different markets?<span class="pm" aria-hidden="true"></span></summary><div class="a"><p>Yes. Embark+ can adapt content for different markets, languages, audiences and donation values. Local requirements and nuances should be part of the brief and review process.</p></div></details>
+      <details><summary>What types of content can it produce?<span class="pm" aria-hidden="true"></span></summary><div class="a"><p>Static posts, carousels, stories and reels, in multiple languages. Reels can carry voiceovers in multiple languages too.</p></div></details>
+      <details><summary>How much does it cost?<span class="pm" aria-hidden="true"></span></summary><div class="a"><p>Pricing has three parts: a one-time setup fee of USD 2,000, USD 1.50 per creative produced, and USD 1,500 a month for platform and service management. In the demo we'll show you what that means for your own volumes.</p></div></details>
+      <details><summary>How do we get started?<span class="pm" aria-hidden="true"></span></summary><div class="a"><p>Book a demonstration using one of your existing fundraising appeals. The team will show you the workflow and discuss what would be required to get started.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- RAMADAN CALCULATOR -->
+<section class="price" id="calculator" aria-labelledby="calcTitle">
+  <div class="wrap">
+    <div class="p-grid">
+      <div class="p-hook">
+        <h2 id="calcTitle">Change the numbers to match your own <span class="new">Ramadan plan.</span></h2>
+        <p class="p-sub">Embark+ helps reduce that repeated production work.</p>
+        <p class="p-note"><b>Traditional route:</b> an agency team at about USD 4,900 a month (AED 18,000), producing 30 to 40 creatives. More volume needs another team.</p>
+        <p class="p-note"><b>Embark+:</b> USD 1.50 per creative, plus USD 1,500 a month for platform and service management.</p>
+      </div>
+      <div class="est" id="est">
+        <div class="est-h"><label for="estN">Creatives you need each month</label><output id="estOut" for="estN">40<small>creatives</small></output></div>
+        <input type="range" id="estN" min="10" max="300" step="10" value="40" aria-describedby="estRes">
+        <div class="est-scale" aria-hidden="true"><span>10</span><span>300</span></div>
+        <div class="per"><span>Show cost for</span><div class="fmt-seg" role="group" aria-label="Period" id="perSeg"><button type="button" data-m="1" aria-pressed="true">Ramadan month</button><button type="button" data-m="12" aria-pressed="false">A full year</button></div></div>
+        <div class="cmp" id="estRes" aria-live="polite">
+          <div class="cmp-row t"><div class="top"><span><b>Traditional agency route</b><span id="estTeams">1 agency team</span></span><strong id="estT">USD 4,900</strong></div><div class="tr"><i id="barT" style="width:100%"></i></div><small id="estTp">30 to 40 creatives per team, per month</small></div>
+          <div class="cmp-row e"><div class="top"><span><b>Embark+</b><span>Platform usage and management</span></span><strong id="estE">USD 1,560</strong></div><div class="tr"><i id="barE" style="width:32%"></i></div><small id="estEp">USD 60 usage (40 × USD 1.50) + USD 1,500 management</small></div>
+        </div>
+        <div class="save"><div><span id="saveL">You save in Ramadan</span><b id="estS">USD 3,340</b></div><em id="estPct">68% lower</em></div>
+      </div>
+    </div>
+    <p class="disc">Illustrative comparison. The traditional route is based on an agency team at about USD 4,900 (AED 18,000) a month producing 30 to 40 creatives; actual agency prices and scopes vary. Embark+ includes USD 1.50 per creative and USD 1,500 a month for platform and service management. The one-time setup fee of USD 2,000 is not included.</p>
+  </div>
+</section>
+
+<!-- BOOK A DEMO -->
+<section class="final" id="demo" aria-labelledby="demoTitle">
+  <div class="wrap final-grid">
+    <div>
+      <h2 id="demoTitle">See what Embark+ can create for your charity.</h2>
+      <p class="body">Bring one of your existing fundraising appeals. We'll show you how it can be adapted for different audiences, markets and donation values.</p>
+      <div class="contact"><a href="mailto:Prashant@embark.media" data-track="email_click"><span>Email Prashant</span><b>Prashant@embark.media</b></a></div>
+    </div>
+    <form class="form" id="demoForm" name="charity-demo" method="POST" data-netlify="true" netlify-honeypot="company_site" novalidate>
+      <input type="hidden" name="form-name" value="charity-demo">
+      <h3>Book a demo</h3>
+      <div class="row">
+        <div class="fld"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" maxlength="120" required></div>
+        <div class="fld"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="200" spellcheck="false" required></div>
+      </div>
+      <div class="row">
+        <div class="fld"><label for="f-org">Charity / organisation</label><input id="f-org" name="organisation" type="text" autocomplete="organization" maxlength="160" required></div>
+        <div class="fld"><label for="f-job">Job title</label><input id="f-job" name="job_title" type="text" autocomplete="organization-title" maxlength="120"></div>
+      </div>
+      <div class="hp" aria-hidden="true"><label for="f-hp">Leave this field empty</label><input id="f-hp" name="company_site" type="text" tabindex="-1" autocomplete="off"></div>
+      <p class="f-err" id="f-err" role="alert"></p>
+      <button class="btn btn-neon" type="submit" id="f-submit">Show me Embark+</button>
+      <div id="f-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img src="img/logo-byline-white-neon.png" alt="Embark+ Intelligent Marketing. Made Affordable." width="900" height="182" loading="lazy">
+    <p>Branded content creation for charities · <a href="#" id="privacy">Privacy policy</a> · 1102/1103 Bay View Tower, Business Bay, Dubai</p>
+  </div>
+</footer>
+
+<a class="mcta" id="mcta" href="#demo" data-track="sticky_cta_click" aria-hidden="true" tabindex="-1">Book a demo</a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lbT" hidden>
+  <div class="lb-top"><span id="lbCount"></span><button class="ic" type="button" id="lbClose" aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
+  <figure class="lb-fig" id="lbFig"><img id="lbImg" alt=""></figure>
+  <div class="lb-cap"><div><b id="lbT"></b><small id="lbS"></small></div><div class="lb-nav" id="lbNav"><button class="ic" type="button" id="lbPrev" aria-label="Previous"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3L5 8l5 5"/></svg></button><button class="ic" type="button" id="lbNext" aria-label="Next"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3l5 5-5 5"/></svg></button></div></div>
+</div>
+
+<script>
+{
+/* ================= CONFIG: the only things left to fill in ================= */
+const CONFIG={
+  VIDEO_SRC:'[INSERT 60-SECOND PRODUCT VIDEO]',   // full video: MP4 path (e.g. video/embark-charities.mp4), or a YouTube / Vimeo link
+  HERO_LOOP_SRC:'video/hero-loop.mp4',            // silent background loop in the hero; swap for a short clip of the final video
+  CONTACT_EMAIL:'Prashant@embark.media',
+  PRIVACY_URL:'',
+  LEAD_ENDPOINT:'',                                 // form backend or CRM webhook; receives a JSON POST
+  GTM_ID:'[INSERT GTM ID]'                          // events go to window.dataLayer either way
+};
+const isSet=v=>!!v&&!/^\[INSERT/.test(v);
+const root=document.documentElement;
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduced)root.classList.add('js-anim');
+const $=id=>document.getElementById(id);
+const C=n=>'img/'+n+'.webp', T=n=>'img/'+n+'-t.webp';
+
+/* ---------- tracking ---------- */
+window.dataLayer=window.dataLayer||[];
+function track(event,props){window.dataLayer.push(Object.assign({event},props||{}))}
+if(isSet(CONFIG.GTM_ID)){const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id='+encodeURIComponent(CONFIG.GTM_ID);document.head.appendChild(s);window.dataLayer.push({'gtm.start':Date.now(),event:'gtm.js'})}
+document.addEventListener('click',e=>{const t=e.target.closest('[data-track]');if(t)track(t.dataset.track,{label:t.dataset.label||t.textContent.trim().slice(0,60)})});
+
+/* ---------- mobile menu ---------- */
+const mb=$('menuBtn'),mm=$('mobileMenu');
+function setMenu(open){mb.setAttribute('aria-expanded',String(open));mm.classList.toggle('is-open',open);mb.setAttribute('aria-label',open?'Close menu':'Open menu');if(open){const f=mm.querySelector('a');if(f)f.focus()}}
+mb.addEventListener('click',()=>setMenu(mb.getAttribute('aria-expanded')!=='true'));
+mm.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});
+
+/* ---------- reveal + count-up ---------- */
+const countUp=el=>{const n=+el.dataset.count,s=el.dataset.suf||'';if(reduced){el.textContent=n+s;return}const t0=performance.now(),dur=1100;
+  const step=t=>{const k=Math.min(1,(t-t0)/dur);el.textContent=Math.round(n*(1-Math.pow(1-k,3)))+s;if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)};
+const revealIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(countUp);revealIO.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px',threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>revealIO.observe(el));
+
+/* ---------- video: hero background loop + full video in a modal ---------- */
+function mountVideo(box){
+  track('video_play',{video:'embark_60s_charities',configured:isSet(CONFIG.VIDEO_SRC)});
+  const src=CONFIG.VIDEO_SRC;
+  if(!isSet(src)){const n=document.createElement('span');n.className='soon';n.setAttribute('role','status');n.textContent='Video coming soon';box.appendChild(n);return}
+  let el;const yt=src.match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/),vm=src.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  if(yt||vm){el=document.createElement('iframe');el.src=yt?'https://www.youtube-nocookie.com/embed/'+yt[1]+'?autoplay=1&rel=0':'https://player.vimeo.com/video/'+vm[1]+'?autoplay=1';el.allow='autoplay; fullscreen; picture-in-picture';el.allowFullscreen=true;el.title='Embark+ in 60 seconds'}
+  else{el=document.createElement('video');el.src=src;el.poster='img/video-poster.webp';el.controls=true;el.playsInline=true;el.setAttribute('aria-label','Embark+ in 60 seconds, for charity teams')}
+  box.appendChild(el);el.focus();if(el.play)el.play().catch(()=>{})}
+function videoModal(){lbSet=[];lbImg.hidden=true;lbFig.querySelectorAll('.player').forEach(p=>p.remove());
+  const p=document.createElement('div');p.className='player';p.innerHTML='<img src="img/video-poster.webp" alt="" style="width:100%;height:100%;object-fit:cover">';lbFig.appendChild(p);
+  $('lbT').textContent='Embark+ in 60 seconds';$('lbS').textContent='For charity teams';$('lbCount').textContent='';$('lbNav').hidden=true;lbOpen();mountVideo(p)}
+$('watchBtn').addEventListener('click',()=>videoModal());
+const heroLoop=$('heroLoop'),saveData=navigator.connection&&navigator.connection.saveData;
+if(!reduced&&!saveData&&isSet(CONFIG.HERO_LOOP_SRC)){heroLoop.src=CONFIG.HERO_LOOP_SRC;heroLoop.preload='auto';
+  heroLoop.addEventListener('playing',()=>heroLoop.classList.add('on'),{once:true});
+  new IntersectionObserver(([e])=>{if(e.isIntersecting)heroLoop.play().catch(()=>{});else heroLoop.pause()}).observe(heroLoop)}
+
+/* ---------- problem: the month fills with versions as you scroll ---------- */
+const EV={1:['cr-leg','Emergency appeal',12],2:['cr-orphan2','Orphan sponsorship',18],3:['cr-orphan1','Food appeal',12],4:['cr-water','Water appeal',12],5:['cr-story1','Jummah',6],6:['cr-zakat','Zakat',18],8:['cr-cad65','Food appeal',12],9:['cr-mosque','Mosque appeal',12],10:['cr-orphan6','Orphan sponsorship',12],11:['cr-leg','Emergency appeal',12],12:['cr-story1','Jummah',6],13:['cr-orphan5','Food appeal',18],14:['cr-orphan3','Orphan sponsorship',12],15:['cr-water','Water appeal',12],16:['cr-zakat','Zakat',18],17:['cr-orphan2','Orphan sponsorship',18],18:['cr-orphan1','Food appeal',12],19:['cr-story1','Jummah',6],20:['cr-mosque','Mosque appeal',12],22:['cr-leg','Emergency appeal',12],23:['cr-cad65','Food appeal',12],24:['cr-orphan6','Orphan sponsorship',12],25:['cr-water','Water appeal',12],26:['cr-story1','Jummah',6],27:['cr-zakat','Zakat',18],28:['cr-orphan5','Food appeal',18]};
+const OFF=0,DAYS=28;
+let ch=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(d=>'<div class="cal-wd" aria-hidden="true">'+d+'</div>').join('');
+for(let i=0;i<DAYS;i++){const d=i-OFF+1;
+  if(d<1||d>DAYS){ch+='<div class="cal-d pad" aria-hidden="true"></div>';continue}
+  const e=EV[d];
+  ch+=e?'<div class="cal-d ev" data-day="'+d+'" data-n="'+e[2]+'" role="img" aria-label="Day '+d+': '+e[1]+', '+e[2]+' versions"><span class="ev-stack s2"></span><span class="ev-stack"></span><span class="ev-card"><img src="'+T(e[0])+'" alt="" loading="lazy" width="200" height="250"></span><span class="ev-day">'+d+'</span><span class="ev-t">'+e[1]+'</span><span class="ev-n">×'+e[2]+'</span></div>'
+     :'<div class="cal-d" aria-hidden="true">'+d+'</div>'}
+$('calGrid').innerHTML=ch;
+const evs=[...document.querySelectorAll('.cal-d.ev')],calN=$('calN'),cal=$('cal');
+let calShown=-1;
+function calUpdate(){const r=cal.getBoundingClientRect(),vh=innerHeight;
+  const p=reduced?1:Math.min(1,Math.max(0,(vh*0.9-r.top)/(r.height*0.75+vh*0.25)));
+  let n=0,c=0;evs.forEach(el=>{const on=+el.dataset.day/DAYS<=p*1.04;el.classList.toggle('on',on);if(on){n+=+el.dataset.n;c++}});
+  if(c!==calShown){calShown=c;calN.textContent=n}}
+
+/* ---------- how it works: the workflow runs as you scroll ---------- */
+const apTop=()=>'<div class="ap-top"><img src="img/logo-purple.png" alt="Embark+" width="900" height="128"><div class="ap-tabs"><span>Home</span><span class="on">Campaigns</span><span>Localiser</span></div><span class="ap-sp"></span><span class="ap-usr">OA</span></div>';
+const stepper=k=>'<div class="stepper">'+['Brief','Supers','Design','Video'].map((s,i)=>'<span class="'+(i<k?'ok':i===k?'on':'')+'"><i>'+(i<k?'✓':i+1)+'</i>'+s+'</span>').join('')+'</div>';
+const crumb=(name,pill,extra)=>'<div class="crumb"><span class="c">Campaigns /</span><h4>'+name+'</h4>'+pill+'<span class="c opt">'+extra+'</span></div>';
+const SUP=[['CE-20261019-0022','Static · AU','Orphaned by war in Gaza. Hungry every night.','44/75','cr-orphan1'],['CE-20261020-0023','Static · AU',"A child can't build a future alone. You can be beside them.",'59/75','cr-orphan2'],['CE-20261021-0024','Static · AU','No parent to turn to. Who looks after them now?','47/75','cr-orphan3'],['CE-20261023-0026','Story · Still · AU','This Jummah, remember the orphans.','34/75','cr-story1'],['CE-20261019-0027','Static · UK','In Gaza, orphans go to bed hungry. No parent is left to fill their plate.','73/75','cr-orphan5'],['CE-20261020-0028','Static · UK','Lost his father. Not his future.','32/75','cr-orphan6']];
+const supRows=mode=>SUP.map((r,i)=>'<tr data-d style="--d:'+i+'"><td><img class="th" src="'+T(r[4])+'" alt=""></td><td class="id">'+r[0]+'<small>'+r[1]+'</small></td><td>'+(mode==='gen'?'<span class="hl" style="--d:'+i+'">'+r[2]+'</span>':r[2])+'</td><td class="num hide-s">'+r[3]+'</td><td>'+(mode==='gen'?'<span class="pill rw"><span class="dot"></span>To review</span>':'<span class="st-flip" style="--d:'+i+'"><span class="pill rw a"><span class="dot"></span>To review</span><span class="pill ok b"><span class="dot"></span>Approved</span></span>')+'</td></tr>').join('');
+const WF=[
+ {t:'Brief',p:'Create a campaign brief.',html:()=>crumb('Orphan','<span class="pill p">✦ Designs to make</span>','2 markets · Week 12 Oct to 19 Oct')+stepper(0)+
+  '<div class="ap-row"><span class="seg"><span class="on">All 6</span><span>Needs a price 0</span><span>Ready 6</span></span><span class="ap-btn">Open supers →</span></div>'+
+  '<table class="tbl"><thead><tr><th>#</th><th>Format</th><th class="hide-s">Appeal</th><th>Hook</th><th class="num">Price</th><th>Market</th><th class="hide-s">Check</th></tr></thead><tbody>'+
+  [['01','Static','Orphan sponsorship','Orphaned by war in Gaza.','$150','AU'],['02','Static','Orphan food','In Gaza, orphans go to bed hungry.','£75','UK'],['03','Carousel','Orphan food','What CA$65 means.','CA$65','CA'],['04','Story','Jummah','Remember the orphans.','Not priced','AU'],['05','Static','Orphan sponsorship',"A child can't build a future alone.",'$215','AU'],['06','Static','Orphan sponsorship','Lost his father.','£110','UK']]
+  .map((r,i)=>'<tr data-d style="--d:'+i+'"><td class="num">'+r[0]+'</td><td>'+r[1]+'</td><td class="hide-s">'+r[2]+'</td><td>'+r[3]+'</td><td class="num">'+r[4]+'</td><td>'+r[5]+'</td><td class="hide-s tick">✓</td></tr>').join('')+'</tbody></table>'},
+ {t:'Concepts and headlines',p:'Generate creative concepts and headlines.',html:()=>crumb('Orphan','<span class="pill p">✦ Supers to approve</span>','2 markets · Week 12 Oct to 19 Oct')+stepper(1)+
+  '<div class="ap-row"><span class="seg"><span class="on">All 10</span><span>To review 10</span><span>Approved 0</span></span></div>'+
+  '<table class="tbl sup"><thead><tr><th></th><th>Creative</th><th>Headline · EN</th><th class="num hide-s">Length</th><th>Status</th></tr></thead><tbody>'+supRows('gen')+'</tbody></table>'},
+ {t:'Select directions',p:'Review and select creative directions.',html:()=>crumb('Orphan','<span class="pill p">✦ Designs to make</span>','2 markets · Week 12 Oct to 19 Oct')+stepper(1)+
+  '<div class="banner"><span><span class="dot"></span><b>All 10 supers approved.</b> <span class="hide-s">Every creative is ready for art direction and design.</span></span><span class="ap-btn">Go to Design →</span></div>'+
+  '<table class="tbl sup"><thead><tr><th></th><th>Creative</th><th>Headline · EN</th><th class="num hide-s">Length</th><th>Status</th></tr></thead><tbody>'+supRows('sel')+'</tbody></table>'},
+ {t:'Designs',p:'Produce designs.',html:()=>crumb('Orphan','<span class="pill p">✦ Designs to make</span>','2 markets · Week 12 Oct to 19 Oct')+stepper(2)+
+  '<div class="ap-row"><span class="seg"><span class="on">All 10</span><span>To review 8</span><span>Approved 0</span></span><span class="seg"><span class="on">4:5</span><span>9:16</span></span></div>'+
+  '<div class="grid-d">'+['cr-orphan1','cr-orphan2','cr-orphan3','cr-orphan6','cr-orphan5','cr-cad65','cr-zakat','cr-mosque'].map((n,i)=>'<div class="card-d" data-d style="--d:'+i+'">In the queue<img src="'+C(n)+'" alt="" style="--d:'+i+'"></div>').join('')+'</div>'},
+ {t:'Adapt',p:'Adapt the designs for different markets and formats.',html:()=>'<div class="crumb"><span class="c">Localiser /</span><h4>Orphan appeal</h4><span class="pill">Static · CA UK AU</span></div>'+
+  '<p style="margin:6px 0 0;color:#77738A">One master becomes every market\'s version.</p>'+
+  '<div class="loc"><div class="mst"><div class="card-d"><img src="'+C('cr-orphan1')+'" alt="" style="--d:0"></div><span class="lbl">Master</span></div><span class="arr" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 15c6 0 6-8 12-8s4 8 12 8M22 10l5 5-5 5"/></svg></span>'+
+  '<div class="vs">'+[['cr-cad65','Canada · CA$65'],['cr-orphan5','UK · £75'],['cr-orphan1','Australia · $150'],['cr-story1','Story 9:16',1]].map((v,i)=>'<div class="v" data-d style="--d:'+(i+1)+'"><div class="card-d'+(v[2]?' st':'')+'"><img src="'+C(v[0])+'" alt="" style="--d:'+(i+1)+'"></div><span class="lbl">'+v[1]+'</span></div>').join('')+'</div></div>'},
+ {t:'Approve',p:'Review, check and approve the final output.',html:()=>crumb('Orphan food · Week 45','<span class="pill rw"><span class="dot"></span>In review</span>','4 markets')+stepper(2)+
+  '<div class="rev" id="rev"><div><div class="card-d"><img src="'+C('cr-cad65')+'" alt="" style="--d:0"></div><div class="thumbs">'+['cr-cad65','cr-orphan5','cr-orphan1','cr-orphan6','cr-orphan2'].map(n=>'<i style="background-image:url('+T(n)+')"></i>').join('')+'</div></div>'+
+  '<div><h5 data-d style="--d:0">CE-20261104-0101 <span class="pill rw"><span class="dot"></span>In review</span></h5><p class="meta" data-d style="--d:1">C1 Carousel, 6 slides · Canada, English</p><p class="chk2" data-d style="--d:2"><i></i>All checks passed</p>'+
+  '<div class="op" data-d style="--d:3"><span>Why this design</span><span>›</span></div><div class="op" data-d style="--d:4"><span>History</span><span>›</span></div>'+
+  '<div class="ab" data-d style="--d:5"><span class="apv"><span class="n">✓ Approve</span><span class="y">✓ Approved</span></span><span class="sq">⚑</span></div></div></div>'}
+];
+const stepsEl=$('steps'),app=$('app'),stage=$('wfStage'),track_=$('wfTrack'),pin=$('wfPin');
+track_.style.setProperty('--n',WF.length);
+stepsEl.innerHTML=WF.map((s,i)=>'<li><button type="button" data-i="'+i+'" aria-label="Stage '+(i+1)+': '+s.t+'"><span class="n">'+(i+1)+'</span><span class="t">'+s.t+'</span></button></li>').join('');
+let cur=-1,revT=null,swapT=null;
+function show(i){if(i===cur)return;cur=i;const s=WF[i];
+  [...stepsEl.children].forEach((li,k)=>{li.classList.toggle('cur',k===i);li.classList.toggle('done',k<i);li.querySelector('button').setAttribute('aria-current',k===i?'step':'false')});
+  $('wfK').textContent='Stage '+(i+1)+' of '+WF.length;$('wfT').textContent=s.t;$('wfP').textContent=s.p;
+  const paint=()=>{app.classList.remove('go');app.innerHTML=apTop()+'<div class="ap-main">'+s.html()+'</div>';void app.offsetWidth;requestAnimationFrame(()=>app.classList.add('go'));
+    clearTimeout(revT);const rv=$('rev');if(rv){if(reduced)rv.classList.add('done');else revT=setTimeout(()=>rv.classList.add('done'),1500)}};
+  clearTimeout(swapT);if(reduced)paint();else{stage.classList.add('swap');swapT=setTimeout(()=>{paint();stage.classList.remove('swap')},180)}
+  track('workflow_interaction',{action:'stage_view',stage:i+1,stage_name:s.t})}
+function wfRange(){const top=track_.getBoundingClientRect().top+scrollY;return{top,len:track_.offsetHeight-pin.offsetHeight}}
+function wfUpdate(){const r=track_.getBoundingClientRect(),len=track_.offsetHeight-pin.offsetHeight;
+  const p=Math.min(1,Math.max(0,-r.top/len));stepsEl.style.setProperty('--p',p);
+  show(Math.min(WF.length-1,Math.floor(p*WF.length*0.999)))}
+function goStage(i,src){i=Math.max(0,Math.min(WF.length-1,i));const {top,len}=wfRange();
+  scrollTo({top:top+len*((i+0.5)/WF.length),behavior:reduced?'auto':'smooth'});track('workflow_interaction',{action:src,stage:i+1})}
+stepsEl.addEventListener('click',e=>{const b=e.target.closest('button');if(b)goStage(+b.dataset.i,'step_click')});
+$('wfPrev').addEventListener('click',()=>goStage(cur-1,'prev'));$('wfNext').addEventListener('click',()=>goStage(cur+1,'next'));
+show(0);
+
+/* ---------- markets: one appeal, six markets ---------- */
+const EN=(v,n)=>({stat:'IN GAZA,',h:'ORPHANS GO TO BED HUNGRY.<br><em>NO PARENT IS LEFT</em><br>TO FILL THEIR PLATE.',lead:v+' feeds '+n+' orphans in Gaza today.',cta:'CLICK THE LINK IN BIO TO DONATE',msg:'In Gaza, orphans go to bed hungry. No parent is left to fill their plate.'});
+const MK=[
+ {id:'ca',code:'CA',name:'Canada',lang:'English',cur:'CA$',val:'CA$65',fmt:'carousel',tag:'GAZA',real:true,...EN('CA$65',6)},
+ {id:'uk',code:'UK',name:'United Kingdom',lang:'English',cur:'£',val:'£75',fmt:'post',tag:'GAZA',real:true,...EN('£75',10)},
+ {id:'au',code:'AU',name:'Australia',lang:'English',cur:'$',val:'$150',fmt:'story',tag:'GAZA',real:true,...EN('$150',10)},
+ {id:'ae',code:'AE',name:'UAE',lang:'Arabic',cur:'AED',val:'AED 350',fmt:'post',tag:'غزة',dir:'rtl',stat:'في غزة،',h:'ينام الأيتام جائعين.<br><em>لم يبقَ أبٌ أو أمّ</em><br>ليملأ أطباقهم.',lead:'350 درهماً تُطعم 10 أيتام في غزة اليوم.',cta:'تبرّع عبر الرابط في البايو',msg:'في غزة، ينام الأيتام جائعين. لم يبقَ أبٌ أو أمّ ليملأ أطباقهم.'},
+ {id:'id',code:'ID',name:'Indonesia',lang:'Bahasa Indonesia',cur:'Rp',val:'Rp1,5 jt',fmt:'story',tag:'GAZA',stat:'DI GAZA,',h:'ANAK YATIM TIDUR KELAPARAN.<br><em>TAK ADA ORANG TUA</em><br>YANG MENGISI PIRING MEREKA.',lead:'Rp1.500.000 memberi makan 10 anak yatim di Gaza hari ini.',cta:'KLIK LINK DI BIO UNTUK DONASI',msg:'Di Gaza, anak yatim tidur kelaparan. Tak ada orang tua yang mengisi piring mereka.'},
+ {id:'de',code:'DE',name:'Germany',lang:'German',cur:'€',val:'90 €',fmt:'post',tag:'GAZA',stat:'IN GAZA',h:'GEHEN WAISEN HUNGRIG SCHLAFEN.<br><em>KEINE ELTERN MEHR,</em><br>DIE IHREN TELLER FÜLLEN.',lead:'90 € versorgen heute 10 Waisenkinder in Gaza.',cta:'JETZT ÜBER DEN LINK IN DER BIO SPENDEN',msg:'In Gaza gehen Waisen hungrig schlafen. Keine Eltern mehr, die ihren Teller füllen.'}
+];
+const FMTN={post:'Post 4:5',story:'Story 9:16',carousel:'Carousel, 6 slides'};
+const mkList=$('mkList'),cv=$('cv'),cvWrap=$('cvWrap'),cvTxt=$('cvTxt'),mkSpec=$('mkSpec'),fmtSeg=$('fmtSeg');
+mkList.innerHTML=MK.map((m,i)=>'<button role="tab" id="t-'+m.id+'" aria-selected="false" aria-controls="mkPanel" tabindex="-1" data-i="'+i+'"><span class="mk-code">'+m.code+'</span><span class="mk-nm"><b>'+m.name+(m.real?'':'<span class="mk-new">New</span>')+'</b><small>'+m.lang+'</small></span><span class="mk-val">'+m.val+'</span></button>').join('');
+let mkI=-1,fmt='post',prevSpec=null,swapM=null;
+function render(src){const m=MK[mkI];
+  cvWrap.classList.remove('post','story','carousel');cvWrap.classList.add(fmt);
+  cv.dir=m.dir||'ltr';cv.setAttribute('aria-label',m.name+' version, '+FMTN[fmt]+': '+m.msg+' '+m.lead);
+  const spec=[['Country',m.name],['Language',m.lang],['Donation value',m.val],['Format',FMTN[fmt]],['Message',m.msg]];
+  const paint=()=>{$('cvTag').textContent=m.tag;
+    cvTxt.innerHTML='<span class="cv-stat">'+m.stat+'</span><p class="cv-h">'+m.h+'</p><p class="cv-lead">'+m.lead+'</p><span class="cv-cta">'+m.cta+'<b>'+m.val+'</b></span>';
+    mkSpec.innerHTML=spec.map((r,i)=>'<div><dt>'+r[0]+'</dt><dd class="'+(prevSpec&&prevSpec[i][1]!==r[1]?'chg':'')+'">'+(r[0]==='Message'&&m.dir?'<bdi dir="rtl" lang="ar">'+r[1]+'</bdi>':r[1])+'</dd></div>').join('');
+    prevSpec=spec;cv.classList.remove('swap')};
+  clearTimeout(swapM);if(reduced||!src)paint();else{cv.classList.add('swap');swapM=setTimeout(paint,220)}
+  $('mkChip').textContent=m.lang+' · '+m.val+' · '+FMTN[fmt];
+  $('mkNote').textContent=m.real?'Adapted from a real appeal produced with Embark+ for a global Islamic charity.':'Illustrative adaptation of the same appeal. Translation and donation value shown for demonstration.';
+  fmtSeg.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.f===fmt)))}
+function setMarket(i,src){if(i===mkI)return;mkI=i;fmt=MK[i].fmt;
+  mkList.querySelectorAll('button').forEach((b,k)=>{const on=k===i;b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1});
+  $('mkPanel').setAttribute('aria-labelledby','t-'+MK[i].id);render(src);
+  if(src)track('market_adaptation_interaction',{market:MK[i].id,method:src})}
+const mkTrack=$('mkTrack'),mkPin=$('mkPin');
+function mkGo(i,src){const top=mkTrack.getBoundingClientRect().top+scrollY,len=mkTrack.offsetHeight-mkPin.offsetHeight;setMarket(i,src);mkLock=i;
+  scrollTo({top:top+len*((i+0.5)/MK.length),behavior:reduced?'auto':'smooth'});clearTimeout(mkLockT);mkLockT=setTimeout(()=>mkLock=-1,900)}
+let mkLock=-1,mkLockT=null;
+function mkUpdate(){const r=mkTrack.getBoundingClientRect(),len=mkTrack.offsetHeight-mkPin.offsetHeight;
+  if(mkLock>-1)return;const p=Math.min(1,Math.max(0,-r.top/len));const i=Math.min(MK.length-1,Math.floor(p*MK.length*0.999));if(i!==mkI&&r.top<innerHeight&&r.bottom>0)setMarket(i,'scroll')}
+mkList.addEventListener('click',e=>{const b=e.target.closest('button');if(b)mkGo(+b.dataset.i,'click')});
+mkList.addEventListener('keydown',e=>{const k={ArrowDown:1,ArrowRight:1,ArrowUp:-1,ArrowLeft:-1}[e.key];if(k===undefined&&e.key!=='Home'&&e.key!=='End')return;e.preventDefault();
+  const j=e.key==='Home'?0:e.key==='End'?MK.length-1:(mkI+k+MK.length)%MK.length;mkList.children[j].focus();mkGo(j,'keyboard')});
+fmtSeg.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.dataset.f===fmt)return;fmt=b.dataset.f;render('format');track('market_adaptation_interaction',{market:MK[mkI].id,format:fmt,method:'format'})});
+setMarket(0);
+
+/* ---------- results strip ---------- */
+$('rStrip').innerHTML=['cr-orphan1','cr-cad65','cr-orphan6','cr-zakat','cr-orphan2','cr-orphan5','cr-orphan3','cr-mosque'].map(n=>'<img src="'+T(n)+'" alt="" loading="lazy" width="200" height="250">').join('');
+
+/* ---------- gallery + lightbox ---------- */
+const GAL=[['cr-leg','Emergency appeals','Emergency','story'],['cr-orphan2','Orphan and child sponsorship','Sponsorship','post'],['cr-orphan5','Food programmes','Food','post'],['cr-water','Water programmes','Water','story'],
+ ['cr-story1','Seasonal giving','Jummah','story'],['cr-zakat','Zakat and Sadaqah','Zakat','post'],['cr-orphan6','Donation value variations','£110','post'],['cr-cad65','Market-specific appeals','Canada','carousel'],
+ ['cr-orphan1','Food programmes','Food','post'],['cr-orphan3','Orphan and child sponsorship','Sponsorship','post']];
+const FMT={post:'Post 4:5',story:'Story 9:16',carousel:'Carousel'};
+const gal=$('gal');
+gal.innerHTML=GAL.map((g,i)=>'<li class="'+g[3]+'" data-f="'+g[3]+'"><button type="button" data-i="'+i+'" aria-label="Open '+g[1]+', '+FMT[g[3]]+'"><span class="art"><img src="'+C(g[0])+'" alt="'+g[1]+' creative" width="'+(g[3]==='story'?450:640)+'" height="800" loading="lazy" decoding="async"><span class="fmt">'+FMT[g[3]]+'</span></span><span class="ct"><b>'+g[1]+'</b><span class="tag">'+g[2]+'</span></span></button></li>').join('');
+const gis=[...gal.children];
+if(!reduced){const gio=new IntersectionObserver(es=>{let n=0;es.forEach(e=>{if(e.isIntersecting){e.target.style.transitionDelay=(n++*70)+'ms';e.target.classList.add('seen');gio.unobserve(e.target)}})},{threshold:.1});gis.forEach(li=>gio.observe(li))}
+$('filters').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$('filters').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  gis.forEach(li=>{li.hidden=!(b.dataset.f==='all'||li.dataset.f===b.dataset.f);li.classList.add('seen')});track('gallery_interaction',{action:'filter',filter:b.dataset.f})});
+const lb=$('lb'),lbImg=$('lbImg'),lbFig=$('lbFig');let lbSet=[],lbI=0,lbLast=null;
+function lbShow(){const it=lbSet[lbI];lbFig.querySelectorAll('.player').forEach(p=>p.remove());lbImg.hidden=false;lbImg.src=it.src;lbImg.alt=it.alt;$('lbT').textContent=it.t;$('lbS').textContent=it.s;$('lbCount').textContent=(lbI+1)+' / '+lbSet.length;$('lbNav').hidden=lbSet.length<2}
+function lbOpen(){lbLast=document.activeElement;lb.hidden=false;document.body.style.overflow='hidden';$('lbClose').focus()}
+function lbClose(){lb.hidden=true;document.body.style.overflow='';lbFig.querySelectorAll('.player').forEach(p=>p.remove());if(lbLast)lbLast.focus()}
+function lbGo(d){if(lbSet.length<2)return;lbI=(lbI+d+lbSet.length)%lbSet.length;lbShow()}
+gal.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const vis=GAL.map((g,i)=>({g,i})).filter(o=>!gis[o.i].hidden);
+  lbSet=vis.map(o=>({src:C(o.g[0]),alt:o.g[1]+' creative',t:o.g[1],s:o.g[2]+' · '+FMT[o.g[3]]+' · Real creative produced with Embark+ for a global Islamic charity.'}));lbI=vis.findIndex(o=>o.i===+b.dataset.i);lbShow();lbOpen();track('gallery_interaction',{action:'open_lightbox',item:lbSet[lbI].t})});
+$('fullWf').addEventListener('click',()=>videoModal());
+$('lbClose').addEventListener('click',lbClose);$('lbPrev').addEventListener('click',()=>lbGo(-1));$('lbNext').addEventListener('click',()=>lbGo(1));
+lb.addEventListener('click',e=>{if(e.target===lb||e.target===lbFig)lbClose()});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&mm.classList.contains('is-open')){setMenu(false);mb.focus()}
+  if(lb.hidden)return;if(e.key==='Escape')lbClose();if(e.key==='ArrowLeft')lbGo(-1);if(e.key==='ArrowRight')lbGo(1);
+  if(e.key==='Tab'){const f=[...lb.querySelectorAll('button:not([hidden])')].filter(b=>b.offsetParent);const a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}});
+
+/* ---------- FAQ tracking ---------- */
+$('acc').querySelectorAll('details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)track('faq_open',{question:d.querySelector('summary').textContent.trim()})}));
+
+/* ---------- Ramadan calculator: traditional agency route vs Embark+ ---------- */
+const AGENCY=4900,PER_TEAM=40,USAGE=1.5,MGMT=1500;
+const aed=n=>'USD '+Math.round(n).toLocaleString('en-US');
+const estN=$('estN');let months=1,calcT=null;
+function calc(src){const n=+estN.value,teams=Math.ceil(n/PER_TEAM),t=teams*AGENCY*months,e=(n*USAGE+MGMT)*months,s=t-e;
+  $('estOut').firstChild.nodeValue=String(n);estN.style.setProperty('--f',((n-estN.min)/(estN.max-estN.min)*100)+'%');
+  $('estTeams').textContent=teams+(teams>1?' agency teams':' agency team')+(months>1?' for 12 months':'');
+  $('estT').textContent=aed(t);$('estE').textContent=aed(e);$('estS').textContent=aed(s);
+  $('estTp').textContent='30 to 40 creatives per team, per month';$('estEp').textContent=aed(n*USAGE*months)+' usage ('+n+' × USD 1.50'+(months>1?' × 12':'')+') + '+aed(MGMT*months)+' management';
+  $('estPct').textContent=Math.round(s/t*100)+'% lower';$('saveL').textContent=months>1?'You save in a year':'You save in Ramadan';
+  $('barT').style.width='100%';$('barE').style.width=Math.max(2,e/t*100)+'%';
+  if(src){clearTimeout(calcT);calcT=setTimeout(()=>track('calculator_interaction',{creatives:n,period_months:months,traditional_aed:t,embark_aed:e,saving_aed:s}),600)}}
+estN.addEventListener('input',()=>calc(true));
+$('perSeg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;months=+b.dataset.m;$('perSeg').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));calc(true)});
+calc(false);
+
+if(CONFIG.PRIVACY_URL)$('privacy').href=CONFIG.PRIVACY_URL;
+
+/* ---------- demo form: four fields; never reports a booking that did not happen ---------- */
+const form=$('demoForm'),fst=$('f-status'),fbtn=$('f-submit'),ferr=$('f-err');
+const val=id=>$(id).value.trim(),EMAIL=/^[^\s@<>()[\]\\,;:"]+@[^\s@<>()[\]\\,;:"]+\.[a-z]{2,}$/i;
+function check(){let first=null;
+  [['f-name',v=>!!v],['f-email',v=>EMAIL.test(v)],['f-org',v=>!!v]].forEach(([id,ok])=>{const bad=!ok(val(id));$(id).closest('.fld').classList.toggle('bad',bad);
+    if(bad){$(id).setAttribute('aria-invalid','true');$(id).setAttribute('aria-describedby','f-err');first=first||$(id)}else{$(id).removeAttribute('aria-invalid');$(id).removeAttribute('aria-describedby')}});
+  ferr.textContent=first?'Please fill in your name, work email and charity.':'';if(first)first.focus();return !first}
+form.querySelectorAll('.fld input').forEach(i=>i.addEventListener('input',()=>{if(i.closest('.fld').classList.contains('bad'))check()}));
+function say(kind,parts){fst.innerHTML='';const d=document.createElement('div');d.className='status '+kind;
+  parts.forEach(p=>{if(typeof p==='string')d.appendChild(document.createTextNode(p));else{const a=document.createElement('a');a.href=p.a;a.textContent=p.t;d.appendChild(a)}});fst.appendChild(d)}
+const MAIL={t:CONFIG.CONTACT_EMAIL,a:'mailto:'+CONFIG.CONTACT_EMAIL};
+let busy=false;
+form.addEventListener('submit',async e=>{e.preventDefault();if(busy)return;fst.innerHTML='';if(!check())return;
+  if(val('f-hp')){say('ok',['Thank you.']);return}
+  const data={name:val('f-name'),email:val('f-email'),organisation:val('f-org'),job_title:val('f-job'),source:'embark-plus-charities',submittedAt:new Date().toISOString()};
+  const hosted=/^https?:$/.test(location.protocol)&&!/claude|claudeusercontent/.test(location.hostname);
+  if(hosted&&!CONFIG.LEAD_ENDPOINT){busy=true;fbtn.disabled=true;fbtn.textContent='Sending…';
+    try{const ac=new AbortController(),t=setTimeout(()=>ac.abort(),15000);
+      // On the hosted site (Netlify), enquiries go to Netlify Forms: Netlify dashboard > Forms > charity-demo
+      const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({'form-name':'charity-demo',name:data.name,email:data.email,organisation:data.organisation,job_title:data.job_title}).toString(),signal:ac.signal});clearTimeout(t);if(!r.ok)throw new Error('http '+r.status);
+      say('ok',['Thanks, '+data.name+'. Your demo request has been sent. We will be in touch to arrange a time.']);form.reset();track('demo_form_submit',{status:'success',backend:'netlify'})}
+    catch(err){say('no',['Your request could not be sent. Please try again, or email ',MAIL,' to book your demo.']);track('demo_form_submit',{status:'error',backend:'netlify'})}
+    finally{busy=false;fbtn.disabled=false;fbtn.textContent='Show me Embark+'}
+    return}
+  if(!CONFIG.LEAD_ENDPOINT){say('no',['This form is not connected yet (integration placeholder: LEAD_ENDPOINT), so your request was not sent. Please email ',MAIL,' to book your demo.']);track('demo_form_submit',{status:'not_connected'});return}
+  busy=true;fbtn.disabled=true;fbtn.textContent='Sending…';
+  try{const ac=new AbortController(),t=setTimeout(()=>ac.abort(),15000);
+    const r=await fetch(CONFIG.LEAD_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),signal:ac.signal});clearTimeout(t);if(!r.ok)throw new Error('http '+r.status);
+    say('ok',['Thanks, '+data.name+'. Your demo request has been sent. We will be in touch to arrange a time.']);form.reset();track('demo_form_submit',{status:'success'})}
+  catch(err){say('no',['Your request could not be sent. Please try again, or email ',MAIL,' to book your demo.']);track('demo_form_submit',{status:'error'})}
+  finally{busy=false;fbtn.disabled=false;fbtn.textContent='Show me Embark+'}});
+
+/* ---------- sticky mobile CTA ---------- */
+const mcta=$('mcta');let pastHero=false,atDemo=false,inWf=false;
+const upd=()=>{const on=pastHero&&!atDemo&&!inWf;mcta.classList.toggle('show',on);mcta.setAttribute('aria-hidden',String(!on));mcta.tabIndex=on?0:-1};
+new IntersectionObserver(([e])=>{pastHero=!e.isIntersecting&&e.boundingClientRect.top<0;upd()}).observe(document.querySelector('.hero'));
+new IntersectionObserver(([e])=>{atDemo=e.isIntersecting;upd()},{threshold:0}).observe($('demo'));
+const pinIn=new Set();const pinIO=new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?pinIn.add(e.target):pinIn.delete(e.target));inWf=pinIn.size>0;upd()},{rootMargin:'-30% 0px -30% 0px'});pinIO.observe($('wfTrack'));pinIO.observe($('mkTrack'));
+
+/* ---------- nav: current section ---------- */
+const navA=[...document.querySelectorAll('.nav-links a')];
+const navIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navA.forEach(a=>a.toggleAttribute('aria-current',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+['problem','how','markets','results','create','faqs'].forEach(id=>navIO.observe($(id)));
+
+/* ---------- scroll loop (calendar + workflow) ---------- */
+let ticking=false;
+const onScroll=()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{ticking=false;calUpdate();wfUpdate();mkUpdate()})};
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+}
+</script>
+</body>
+</html>
